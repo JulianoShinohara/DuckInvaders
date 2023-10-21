@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi3ads4il04iu"]
+
+[ext_resource type="Texture2D" uid="uid://cj4rpkq8xbw4w" path="res://Style/Images/netuno.png" id="1_mqfy8"]
+[ext_resource type="PackedScene" uid="uid://ck2yianp3wsnj" path="res://Player/player.tscn" id="2_yert4"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Netuno" type="Sprite2D" parent="."]
+texture = ExtResource("1_mqfy8")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_yert4")]
+position = Vector2(155, 607)
+motion_mode = 1
