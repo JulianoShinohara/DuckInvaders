@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck2yianp3wsnj"]
+
+[ext_resource type="Texture2D" uid="uid://b0wk4alxkc62f" path="res://Player/GatoDeGuerra.png" id="1_46t8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2uri"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.01, 0.01)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u2uri")
+
+[node name="GatoDeGuerra" type="Sprite2D" parent="."]
+texture = ExtResource("1_46t8n")
