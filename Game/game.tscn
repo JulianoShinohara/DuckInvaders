@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi3ads4il04iu"]
+[gd_scene load_steps=9 format=3 uid="uid://bi3ads4il04iu"]
 
+[ext_resource type="Script" path="res://Game/game.gd" id="1_26mb4"]
 [ext_resource type="Texture2D" uid="uid://cls5168cjbvxc" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
-[ext_resource type="PackedScene" uid="uid://ck2yianp3wsnj" path="res://Player/player.tscn" id="2_yert4"]
-[ext_resource type="PackedScene" uid="uid://djotjwmns812" path="res://Wall/bullet_wall.tscn" id="3_ms2gk"]
-[ext_resource type="PackedScene" uid="uid://dt3udk8jtgko0" path="res://Wall/player_wall.tscn" id="4_gmki8"]
+[ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="2_yert4"]
+[ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="3_ms2gk"]
+[ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="4_gmki8"]
+[ext_resource type="PackedScene" uid="uid://cwwiyll8hhpsu" path="res://Enemies/Spawner/enemy_spawner.tscn" id="6_berc0"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6muqy"]
 scenes/2/scene = ExtResource("3_ms2gk")
@@ -13,6 +15,7 @@ scenes/3/scene = ExtResource("4_gmki8")
 sources/0 = SubResource("TileSetScenesCollectionSource_6muqy")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_26mb4")
 
 [node name="Netuno" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0aoa")
@@ -31,3 +34,23 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_right = 128.0
 offset_bottom = 27.0
+
+[node name="EnemySpawner" parent="." instance=ExtResource("6_berc0")]
+position = Vector2(120, 15)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnPoints" type="Node" parent="."]
+
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
+position = Vector2(13, 11)
+
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
+position = Vector2(207, 17)
+
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
+position = Vector2(288, 13)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
