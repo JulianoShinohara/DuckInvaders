@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var bullet_speed: float = 400
 @export var fire_delay: float = 0.10
 @export var fire_error: float = 0.08
-
+@export var health: int = 3
 
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
@@ -43,3 +43,17 @@ func _fire_bullet():
 	_can_fire = false
 	await get_tree().create_timer(fire_delay).timeout
 	_can_fire = true	
+
+func _hit(bullet: Bullet) -> void:
+	health -= bullet.damage
+	
+	if health <= 0:
+		emit_signal("player_health_depleted")
+		get_tree().change_scene_to_file("res://Menu/menu.tscn")
+	#	game_controller.create_explosion("small", get_global_position())
+		
+
+
+func _on_hit_box_body_entered(body):
+	if body.is_in_group("bullet"):
+		_hit(body)
