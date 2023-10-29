@@ -6,5 +6,5 @@ extends RigidBody2D
 
 func _on_body_entered(body: Node) -> void:
 	if not body.is_in_group(not_target):
-		#game_controller.create_explosion("tiny", get_global_position())
+		game_controller.create_explosion("tiny", get_global_position())
 		queue_free()

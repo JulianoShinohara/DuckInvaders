@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0m7juer57dq3"]
 
-[ext_resource type="Texture2D" uid="uid://dy7xfamtux320" path="res://ground.png" id="1_akgp6"]
+[ext_resource type="Texture2D" uid="uid://dde8vngdkmuwp" path="res://Style/Images/Wall/wall.png" id="1_f1sfx"]
 [ext_resource type="Script" path="res://Explosion/explosion.gd" id="2_uf01k"]
 
 [sub_resource type="Curve" id="Curve_oobii"]
@@ -20,7 +20,7 @@ amount = 20
 lifetime = 0.1
 one_shot = true
 explosiveness = 1.0
-texture = ExtResource("1_akgp6")
+texture = ExtResource("1_f1sfx")
 emission_shape = 3
 emission_rect_extents = Vector2(3, 3)
 spread = 180.0

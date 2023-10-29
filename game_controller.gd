@@ -18,9 +18,9 @@ var explosions = {
 
 # PUBLIC METHODS
 ############################################
-func init(player, camera) -> void:
+func init(player) -> void:
 	_player = player
-	get_tree().call_group("set_player", _player)
+	#get_tree().call_group("set_player", _player)
 
 
 func get_camera() -> Camera2D:
