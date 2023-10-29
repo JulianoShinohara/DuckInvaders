@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck2yianp3wsnj"]
+[gd_scene load_steps=5 format=3 uid="uid://ck2yianp3wsnj"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
 [ext_resource type="Texture2D" uid="uid://db2hpramxgq6r" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
 [ext_resource type="Texture2D" uid="uid://b6b7dswqgxsqn" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2uri"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
 animations = [{
@@ -23,9 +21,12 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3w80o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_u2uri")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tdkd1")
 frame_progress = 0.417885
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, -27, 10, -17, 11, -10, 29, 11, 29, 17, 27, 20, 13, 20, 13, 24, 4, 24, 4, 20, -4, 20, -4, 24, -13, 24, -13, 20, -27, 20, -29, 16, -29, 10, -11, -10, -10, -17, -7, -27, -2, -31, 2, -31)
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(0, -42)

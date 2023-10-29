@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi3ads4il04iu"]
+[gd_scene load_steps=4 format=3 uid="uid://bi3ads4il04iu"]
 
-[ext_resource type="Texture2D" uid="uid://cj4rpkq8xbw4w" path="res://Style/Images/netuno.png" id="1_mqfy8"]
+[ext_resource type="Texture2D" uid="uid://cls5168cjbvxc" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
 [ext_resource type="PackedScene" uid="uid://ck2yianp3wsnj" path="res://Player/player.tscn" id="2_yert4"]
+
+[sub_resource type="TileSet" id="TileSet_goor8"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Netuno" type="Sprite2D" parent="."]
-texture = ExtResource("1_mqfy8")
+texture = ExtResource("1_v0aoa")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_yert4")]
 position = Vector2(155, 607)
 motion_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_goor8")
+format = 2

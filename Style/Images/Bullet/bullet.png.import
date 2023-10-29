@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj4rpkq8xbw4w"
-path="res://.godot/imported/netuno.png-ef5b0fead13345f8ee92835b6dc73580.ctex"
+uid="uid://d21fsgnr0tcy1"
+path="res://.godot/imported/bullet.png-b64b07c1acafda4c629cbce4d508d9b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Style/Images/netuno.png"
-dest_files=["res://.godot/imported/netuno.png-ef5b0fead13345f8ee92835b6dc73580.ctex"]
+source_file="res://Style/Images/Bullet/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-b64b07c1acafda4c629cbce4d508d9b2.ctex"]
 
 [params]
 
