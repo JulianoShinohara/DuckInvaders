@@ -12,6 +12,9 @@ var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
 
+signal update_player_health
+signal player_health_depleted
+
 func _physics_process(delta: float) -> void:
 	_animated_sprite.play("default")	
 	_input_vector.x = Input.get_axis("ui_left", "ui_right")
@@ -34,7 +37,6 @@ func _physics_process(delta: float) -> void:
 func _fire_bullet():
 	if not _can_fire:
 		return
-	
 	var bullet: RigidBody2D = _bullet_res.instantiate()
 	bullet.position = $BulletPoint.get_global_position()
 	bullet.apply_impulse(Vector2(0,-bullet_speed), Vector2())
@@ -46,13 +48,12 @@ func _fire_bullet():
 
 func _hit(bullet: Bullet) -> void:
 	health -= bullet.damage
-	
+	emit_signal("update_player_health", health)
 	if health <= 0:
 		emit_signal("player_health_depleted")
 		get_tree().change_scene_to_file("res://Menu/menu.tscn")
 	#	game_controller.create_explosion("small", get_global_position())
 		
-
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("bullet"):

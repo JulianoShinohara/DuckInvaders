@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw1xe8ia5164g"]
+
+[ext_resource type="Texture2D" uid="uid://dy7xfamtux320" path="res://ground.png" id="1_wykhj"]
+[ext_resource type="Script" path="res://Explosion/explosion.gd" id="2_3a2uu"]
+
+[sub_resource type="Curve" id="Curve_oobii"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xmnk0"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_2kk7s"]
+
+[node name="Explosion" type="CPUParticles2D"]
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_wykhj")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 245.87
+initial_velocity_max = 245.87
+damping_min = 18.348
+damping_max = 18.348
+damping_curve = SubResource("Curve_oobii")
+scale_amount_min = 0.2
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_xmnk0")
+color_initial_ramp = SubResource("Gradient_2kk7s")
+script = ExtResource("2_3a2uu")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qcb1q15jcjm2"]
 
 [ext_resource type="Texture2D" uid="uid://bcofdadduwrxl" path="res://Style/Images/Enemys/vecteezy_duck_1205611.png" id="1_75uwa"]
-[ext_resource type="Script" path="res://Enemys/simples 1/Atirador.gd" id="1_cffrc"]
+[ext_resource type="Script" path="res://Enemies/simples 1/Atirador.gd" id="1_cffrc"]
 
 [sub_resource type="GDScript" id="GDScript_5ksxo"]
 script/source = "extends Node2D
