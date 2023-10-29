@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cls5168cjbvxc"
-path="res://.godot/imported/netuno.png-9d4b94beaf930bcba54a3801c5fd1bee.ctex"
+uid="uid://db2hpramxgq6r"
+path="res://.godot/imported/nave-01.png-4bd511e4b19e14cdeb3807f93247c968.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Style/Images/BackGround/netuno.png"
-dest_files=["res://.godot/imported/netuno.png-9d4b94beaf930bcba54a3801c5fd1bee.ctex"]
+source_file="res://Style/Images/Nave/nave-01.png"
+dest_files=["res://.godot/imported/nave-01.png-4bd511e4b19e14cdeb3807f93247c968.ctex"]
 
 [params]
 

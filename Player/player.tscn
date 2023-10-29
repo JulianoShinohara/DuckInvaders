@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck2yianp3wsnj"]
+[gd_scene load_steps=6 format=3 uid="uid://ck2yianp3wsnj"]
 
-[ext_resource type="Texture2D" uid="uid://b0wk4alxkc62f" path="res://Player/GatoDeGuerra.png" id="1_46t8n"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
+[ext_resource type="Texture2D" uid="uid://db2hpramxgq6r" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
+[ext_resource type="Texture2D" uid="uid://b6b7dswqgxsqn" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2uri"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5xbyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n5vjx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.01, 0.01)
+script = ExtResource("1_3w80o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u2uri")
 
-[node name="GatoDeGuerra" type="Sprite2D" parent="."]
-texture = ExtResource("1_46t8n")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdkd1")
+frame_progress = 0.417885

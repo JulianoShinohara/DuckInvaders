@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0wk4alxkc62f"
-path="res://.godot/imported/GatoDeGuerra.png-acc5b3ee3a3eb0742e17b2fcc60b81a8.ctex"
+uid="uid://b6b7dswqgxsqn"
+path="res://.godot/imported/nave-02.png-eb1a1f6b298afa02b7694656cd08d04f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/GatoDeGuerra.png"
-dest_files=["res://.godot/imported/GatoDeGuerra.png-acc5b3ee3a3eb0742e17b2fcc60b81a8.ctex"]
+source_file="res://Style/Images/Nave/nave-02.png"
+dest_files=["res://.godot/imported/nave-02.png-eb1a1f6b298afa02b7694656cd08d04f.ctex"]
 
 [params]
 
