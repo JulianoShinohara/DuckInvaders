@@ -23,10 +23,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = _input_vector * 0
 	
+	#global_position.y = clamp(global_position.y,)
+	
 	move_and_slide()
 	
 	if(Input.is_action_pressed("fire")):
 		_fire_bullet()
+	
 
 func _fire_bullet():
 	if not _can_fire:
