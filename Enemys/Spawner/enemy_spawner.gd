@@ -69,23 +69,3 @@ func activate() -> void:
 	
 	if not initial_delay:
 		_generate_entity()
-
-
-func _hit(body: Node2D) -> void:
-	health -= body.damage
-	
-	if _tween:
-		_tween.stop()
-	_tween = create_tween()
-	_tween.tween_property($Sprite2D1, "modulate", Color.RED, 0.0)
-	_tween.tween_property($Sprite2D1, "modulate", Color.WHITE, 0.1)
-	
-	if health <= 0:
-		game_controller.get_camera().shake_camera(5, 0.3)
-		game_controller.create_explosion("normal", get_global_position())
-		queue_free()
-
-
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("bullet"):
-		_hit(body)
