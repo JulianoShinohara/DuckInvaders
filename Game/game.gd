@@ -22,7 +22,7 @@ func _on_spawn_timer_timeout():
 	enemy.position = $EnemySpawner.position
 	
 	var nodes = get_tree().get_nodes_in_group("spawn")
-	var node = nodes[randi() % nodes.size()]
+	var node = nodes[randi_range(0, 3)]
 
 	var position = node.position
 	$EnemySpawner.position = position

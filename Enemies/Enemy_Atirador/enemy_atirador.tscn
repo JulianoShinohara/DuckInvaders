@@ -1,46 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://qcb1q15jcjm2"]
+[gd_scene load_steps=3 format=3 uid="uid://sh0d8cobkqr3"]
 
+[ext_resource type="Script" path="res://Enemies/Enemy_Atirador/enemy_atirador.gd" id="1_3b177"]
 [ext_resource type="Texture2D" uid="uid://bcofdadduwrxl" path="res://Style/Images/Enemys/vecteezy_duck_1205611.png" id="1_75uwa"]
 
-[sub_resource type="GDScript" id="GDScript_5ksxo"]
-script/source = "extends Node2D
+[node name="Atirador" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_3b177")
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="GDScript" id="GDScript_juvtd"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[node name="Atirador" type="Node2D"]
-script = SubResource("GDScript_5ksxo")
-
-[node name="Atirador" type="Area2D" parent="."]
-texture_filter = 1
-script = SubResource("GDScript_juvtd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Atirador"]
-scale = Vector2(0.02, 0.02)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_75uwa")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Atirador"]
-scale = Vector2(0.02, 0.02)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.03, 0.03)
 polygon = PackedVector2Array(356, -620.4, 356, -619, 379, -613, 379, -611.7, 401, -600.7, 401, -599.4, 422, -581.4, 422, -579.2, 437, -560.2, 437, -558.1, 448, -530.9, 448, -525.5, 450.8, -502.5, 452.4, -502.5, 623, -431.8, 623, -430.4, 641, -413.4, 641, -410.9, 650, -386.9, 650, -376.2, 641.5, -349.5, 639.8, -349.5, 631.8, -341.5, 628.4, -341.5, 615, -339.1, 615, -341.1, 416.4, -421.5, 399.8, -406.5, 397.5, -406.5, 375.5, -393.5, 372.3, -393.5, 348.3, -386.5, 323.4, -386.5, 334.9, -372.5, 336.8, -372.5, 352.7, -358.5, 354.4, -358.5, 418, -329.8, 418, -328.6, 452, -307.6, 452, -306.5, 473, -290.5, 473, -289.3, 509, -253.3, 509, -251.2, 539, -210.2, 539, -208, 561, -164, 561, -160.8, 574, -119.8, 574, -114.5, 581, -65.6, 581, -36.4, 577.8, -3.5, 576.7, -3.5, 568.7, 38.5, 567.4, 38.5, 553.4, 79.5, 552.2, 79.5, 532.2, 118.5, 531, 118.5, 509.1, 150.5, 507.9, 150.5, 480.9, 180.5, 478.7, 180.5, 446.8, 208.5, 444.6, 208.5, 414, 228.6, 414, 230.1, 385.1, 273.5, 383.9, 273.5, 354.9, 305.5, 352.9, 305.5, 334.8, 322.5, 332.7, 322.5, 308.7, 340.5, 306.5, 340.5, 257.5, 365.5, 254.4, 365.5, 232.4, 373.5, 228.4, 373.5, 192.2, 381.5, 127, 381.5, 127, 390.5, 138.9, 552.5, 314.4, 552.5, 339, 562.1, 339, 563.6, 356, 578.6, 356, 581, 367, 602, 367, 607.6, 365.8, 621.5, -72.7, 621.5, -75.4, 606.5, -73.6, 606.5, -69.6, 588.5, -68.2, 588.5, -61.2, 575.5, -59.9, 575.5, -43.8, 560.5, -41.4, 560.5, -21.4, 552.5, 38, 552.5, 38, 542.5, 24.1, 358.5, -629, 182, -629, 180.8, -641, 175.8, -641, 174.3, -652, 163.3, -652, 161, -657, 151, -657, 131.5, -655.4, 131.5, -649.4, 116.5, -647.8, 116.5, -636.8, 105.5, -634.6, 105.5, -628.6, 101.5, -624.4, 101.5, -615, 99.8, -615, 99.2, -521, 59.2, -531, 48.3, -531, 44.5, -532.1, 28.5, -530.4, 28.5, -527.4, 19.5, -525.8, 19.5, -515.8, 9.5, -513, 9.5, -502, 7, -502, 6.20001, -19.4, -201.5, -15.4, -201.5, 22.8, -208.5, 47.2, -208.5, 86.4, -201.5, 93.7, -201.5, 139.8, -208.5, 169.1, -208.5, 194, -206.3, 194, -205.3, 222, -201.2, 222, -200, 259, -190, 259, -188.8, 298, -171.8, 298, -170.6, 320.2, -157.1, 299.9, -192.5, 299, -192.5, 274, -225.5, 273.2, -225.5, 235.1, -261.5, 233.4, -261.5, 191, -290.4, 191, -291.7, 164, -319.7, 164, -321.9, 151, -339.9, 151, -342, 138, -368, 138, -371.2, 132, -389.2, 132, -394.2, 128, -417.3, 128, -440.7, 135.3, -482.5, 136.6, -482.5, 144.6, -506.5, 145.8, -506.5, 160.8, -534.5, 162.1, -534.5, 187.1, -564.5, 189.1, -564.5, 205.2, -579.5, 207.5, -579.5, 240.4, -599.5, 243.7, -599.5, 298.7, -617.5, 302.6, -617.5, 316, -620.2, 316, -621.6)
