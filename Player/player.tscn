@@ -28,9 +28,11 @@ sprite_frames = SubResource("SpriteFrames_tdkd1")
 frame_progress = 0.417885
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.98, 0.98)
 polygon = PackedVector2Array(7, -27, 10, -17, 11, -10, 29, 11, 29, 17, 27, 20, 13, 20, 13, 24, 4, 24, 4, 20, -4, 20, -4, 24, -13, 24, -13, 20, -27, 20, -29, 16, -29, 10, -11, -10, -10, -17, -7, -27, -2, -31, 2, -31)
 
 [node name="BulletPoint" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -42)
 
 [node name="HitBox" type="Area2D" parent="."]

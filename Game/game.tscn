@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1146oohv83w3"]
+[gd_scene load_steps=12 format=3 uid="uid://d1146oohv83w3"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_26mb4"]
 [ext_resource type="Texture2D" uid="uid://cls5168cjbvxc" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="4_gmki8"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="5_rgi0m"]
 [ext_resource type="PackedScene" uid="uid://cwwiyll8hhpsu" path="res://Enemies/Spawner/enemy_spawner.tscn" id="6_berc0"]
-[ext_resource type="PackedScene" uid="uid://d0x1drmt161yu" path="res://AtivadorEnemy/ativador_enemy.tscn" id="7_vnvf5"]
+[ext_resource type="Script" path="res://Game/Path2D.gd" id="9_hrr2a"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6muqy"]
 scenes/2/scene = ExtResource("3_ms2gk")
@@ -16,7 +16,13 @@ scenes/3/scene = ExtResource("4_gmki8")
 [sub_resource type="TileSet" id="TileSet_ajpey"]
 sources/0 = SubResource("TileSetScenesCollectionSource_6muqy")
 
-[node name="Game" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_aaem7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 26, 60, 0, 0, 0, 0, 274, 56, 0, 0, 0, 0, 278, 107, 0, 0, 0, 0, 218, 82, 0, 0, 0, 0, 167, 102, 0, 0, 0, 0, 91, 81, 0, 0, 0, 0, 40, 101, 0, 0, 0, 0, 84, 141, 0, 0, 0, 0, 111, 167, 0, 0, 0, 0, 140, 131, 0, 0, 0, 0, 181, 164, 0, 0, 0, 0, 226, 132, 0, 0, 0, 0, 269, 162, 0, 0, 0, 0, 237, 208, 0, 0, 0, 0, 178, 205, 0, 0, 0, 0, 142, 174, 0, 0, 0, 0, 111, 221, 0, 0, 0, 0, 62, 187, 0, 0, 0, 0, 60, 250, 0, 0, 0, 0, 106, 278, 0, 0, 0, 0, 152, 243, 0, 0, 0, 0, 189, 274, 0, 0, 0, 0, 238, 243, 0, 0, 0, 0, 278, 282, 0, 0, 0, 0, 243, 338, 0, 0, 0, 0, 186, 336, 0, 0, 0, 0, 143, 309, 0, 0, 0, 0, 104, 337, 0, 0, 0, 0, 57, 308, 0, 0, 0, 0, 59, 376, 0, 0, 0, 0, 102, 401, 0, 0, 0, 0, 155, 381, 0, 0, 0, 0, 223, 397, 0, 0, 0, 0, 278, 370)
+}
+point_count = 34
+
+[node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_26mb4")
 
 [node name="Netuno" type="Sprite2D" parent="."]
@@ -39,26 +45,6 @@ offset_bottom = 27.0
 [node name="EnemySpawner" parent="." instance=ExtResource("6_berc0")]
 position = Vector2(128, -15)
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="SpawnPoints" type="Node" parent="."]
-
-[node name="Spawn1" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
-position = Vector2(48, -15)
-
-[node name="Spawn2" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
-position = Vector2(209, -14)
-
-[node name="Spawn3" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
-position = Vector2(275, -15)
-
-[node name="Spawn4" type="Marker2D" parent="SpawnPoints" groups=["spawn"]]
-position = Vector2(128, -16)
-
-[node name="AtivadorEnemy" parent="." instance=ExtResource("7_vnvf5")]
-position = Vector2(159, 19)
-scale = Vector2(15.92, 0.200001)
-
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[node name="Path2D" type="Path2D" parent="." groups=["path"]]
+curve = SubResource("Curve2D_aaem7")
+script = ExtResource("9_hrr2a")
