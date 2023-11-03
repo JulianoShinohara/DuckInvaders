@@ -11,8 +11,6 @@ var target: Player
 #var fireRate: float 0.4
 
 func _ready():
-	print("Layer", collision_layer)
-	print("Mask", collision_mask)
 	pass
 
 func _process(delta):
