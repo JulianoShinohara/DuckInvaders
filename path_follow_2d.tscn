@@ -12,7 +12,3 @@ script = ExtResource("1_yq7si")
 
 [node name="Atirador" parent="." instance=ExtResource("2_5j0hw")]
 rotation = 3.14159
-
-[node name="_Timer_196244" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true

@@ -4,17 +4,19 @@ class_name Enemy_Atirador
 
 # Enemy
 @export var health: float = 10
-@export var speed: float = 4.0
+
 var _player: Player
 
 
 @export var bullet_speed: float = 150
-@export var fire_delay: float = 0.5
+@export var fire_delay: float = 1
 @export var fire_error: float = 0.08
 
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 
 var _can_fire: bool = true
+
+signal health_depleted
 
 # Tiros
 #var fireRate: float 0.4
@@ -35,12 +37,10 @@ func _fire_bullet():
 	var bullet: RigidBody2D = _bullet_res.instantiate()
 	bullet.not_target = "enemy"
 	bullet.position = $BulletPoint.get_global_position()
-	#bullet.velocity.rotate()
-	#bullet.look_at(_player.position)
-	#bullet.move_towards(_player.position);
+	bullet.collision_layer = 8
+	bullet.collision_mask = 8
 	var dir = (_player.global_position - global_position).normalized()
-	bullet.global_rotation = dir.angle() + PI / 2.0
-	bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(bullet.global_rotation), Vector2())
+	bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
 	get_tree().get_root().add_child(bullet)
 	
 	_can_fire = false
@@ -48,7 +48,6 @@ func _fire_bullet():
 	_can_fire = true	
 
 func _hit(bullet: Bullet) -> void:
-	print("enemy should be hit",not is_in_group(bullet.not_target))
 	if not is_in_group(bullet.not_target):
 		health -= bullet.damage
 		if health <= 0:

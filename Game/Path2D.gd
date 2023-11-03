@@ -15,7 +15,7 @@ func _process(delta):
 	if (timer > spawnTime):
 	
 		var newEnemy = enemy_path.instantiate()
-		newEnemy.progress = randf_range(0, 30)
+		newEnemy.progress = randf_range(0, 300)
 		newEnemy.set_player(_player)
 		add_child(newEnemy)
 		timer = 0
