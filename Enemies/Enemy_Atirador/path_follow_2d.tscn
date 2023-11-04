@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf3t6bkt64xmg"]
+
+[ext_resource type="Script" path="res://Enemies/Enemy_Atirador/PathFollow2D.gd" id="1_dfrom"]
+[ext_resource type="PackedScene" uid="uid://sh0d8cobkqr3" path="res://Enemies/Enemy_Atirador/enemy_atirador.tscn" id="2_o1tmo"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(290, 46)
+rotation = 3.14159
+rotates = false
+cubic_interp = false
+script = ExtResource("1_dfrom")
+
+[node name="Atirador" parent="." instance=ExtResource("2_o1tmo")]
+rotation = 3.14159
+
+[connection signal="health_depleted" from="Atirador" to="." method="_on_atirador_health_depleted"]

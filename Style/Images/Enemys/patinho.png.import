@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7rugrubwiyy"
-path="res://.godot/imported/Atirador.png-a70c800bd59e24a09bb6b95638815687.ctex"
+uid="uid://dggb6uoiexqr2"
+path="res://.godot/imported/patinho.png-95985e995b5ede27b50b88558e1c1088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Style/Images/Enemys/Atirador.png"
-dest_files=["res://.godot/imported/Atirador.png-a70c800bd59e24a09bb6b95638815687.ctex"]
+source_file="res://Style/Images/Enemys/patinho.png"
+dest_files=["res://.godot/imported/patinho.png-95985e995b5ede27b50b88558e1c1088.ctex"]
 
 [params]
 

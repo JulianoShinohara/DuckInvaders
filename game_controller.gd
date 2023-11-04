@@ -20,7 +20,7 @@ var explosions = {
 ############################################
 func init(player) -> void:
 	_player = player
-	get_tree().call_group("path_atirador" ,"set_player", _player)
+	get_tree().call_group("path" ,"set_player", _player)
 
 
 func get_camera() -> Camera2D:
@@ -31,3 +31,9 @@ func create_explosion(type: String, pos: Vector2) -> void:
 	var explosion = explosions[type].instantiate()
 	explosion.global_position = pos
 	get_tree().root.add_child(explosion)	
+	
+func enemy_eliminated(enemy):
+	print("Enemy", enemy)
+	get_tree().call_group("path" , "enemy_eliminated", enemy)
+	
+	

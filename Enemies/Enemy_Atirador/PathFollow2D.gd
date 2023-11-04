@@ -8,7 +8,6 @@ var _player: Player
 
 func _ready():
 	var _enemy: Enemy_Atirador = get_child(0)
-	print("Enemy", _enemy)
 	_enemy.set_player(_player)
 
 func set_player(player: Player):
@@ -17,3 +16,6 @@ func set_player(player: Player):
 	
 func _process(delta):
 	set_progress(get_progress() + enemy_speed * delta)
+
+func _on_atirador_health_depleted():
+	queue_free()

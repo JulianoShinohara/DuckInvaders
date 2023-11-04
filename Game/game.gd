@@ -10,16 +10,3 @@ func _ready():
 #	pass
 
 
-func _on_spawn_timer_timeout():
-	pass
-	#Gerar os inimigos no spawner
-	#var enemy = Enemy.instantiate()
-	#add_child(enemy)
-	#enemy.position = $EnemySpawner.position
-	#enemy.set_player(_player)
-	#var nodes = get_tree().get_nodes_in_group("spawn")
-	#var node = nodes[randi_range(0, 3)]
-
-	#var position = node.position
-	#$EnemySpawner.position = position
-

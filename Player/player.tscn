@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt724p02hihsy"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
-[ext_resource type="Texture2D" uid="uid://c60trn85cecv3" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
-[ext_resource type="Texture2D" uid="uid://xfn628w38bpk" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
+[ext_resource type="Texture2D" uid="uid://db2hpramxgq6r" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
+[ext_resource type="Texture2D" uid="uid://b6b7dswqgxsqn" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
 animations = [{
@@ -24,11 +24,12 @@ collision_mask = 12
 script = ExtResource("1_3w80o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_tdkd1")
 frame_progress = 0.417885
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.98, 0.98)
+scale = Vector2(0.78, 0.78)
 polygon = PackedVector2Array(7, -27, 10, -17, 11, -10, 29, 11, 29, 17, 27, 20, 13, 20, 13, 24, 4, 24, 4, 20, -4, 20, -4, 24, -13, 24, -13, 20, -27, 20, -29, 16, -29, 10, -11, -10, -10, -17, -7, -27, -2, -31, 2, -31)
 
 [node name="BulletPoint" type="Node2D" parent="."]
@@ -40,6 +41,7 @@ collision_layer = 9
 collision_mask = 9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(7, -27, 10, -17, 11, -10, 29, 11, 29, 17, 27, 20, 13, 20, 13, 24, 4, 24, 4, 20, -4, 20, -4, 24, -13, 24, -13, 20, -27, 20, -29, 16, -29, 10, -11, -10, -10, -17, -7, -27, -2, -31, 2, -31)
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
