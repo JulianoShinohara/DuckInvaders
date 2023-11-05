@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgkbufrmqv0hd"]
+
+[ext_resource type="Script" path="res://WinAndLose/win_screen.gd" id="1_w0kjx"]
+[ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_2yvvx"]
+[ext_resource type="FontFile" uid="uid://ckdp08t33ett5" path="res://Style/Fonts/arialbd.ttf" id="3_47imq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmfts"]
+bg_color = Color(0.545098, 0.545098, 0.545098, 0.533333)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqep1"]
+font = ExtResource("2_2yvvx")
+font_size = 41
+font_color = Color(0, 0.827451, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0kjx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -108.0
+offset_right = 112.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jmfts")
+
+[node name="Win" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 20.0
+offset_right = 68.0
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "YOU WIN !!"
+label_settings = SubResource("LabelSettings_cqep1")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -40.5
+offset_right = 69.5
+offset_bottom = -13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_47imq")
+theme_override_font_sizes/font_size = 20
+text = "Score: 50000"
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = 5.0
+offset_right = 73.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_47imq")
+theme_override_font_sizes/font_size = 17
+text = "Next"
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -56.0
+offset_right = 72.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_47imq")
+theme_override_font_sizes/font_size = 17
+text = "Exit"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
