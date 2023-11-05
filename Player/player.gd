@@ -7,7 +7,7 @@ class_name Player
 @export var fire_delay: float = 0.10
 @export var fire_error: float = 0.08
 @export var health: int = 3
-@export var invunerability_time: int = 1
+@export var invunerability_time: int = 3
 
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
@@ -17,8 +17,10 @@ var _can_be_hit: bool = true
 signal update_player_health
 signal player_health_depleted
 
-func _physics_process(delta: float) -> void:
+func _ready():
 	_animated_sprite.play("default")	
+
+func _physics_process(delta: float) -> void:
 	_input_vector.x = Input.get_axis("ui_left", "ui_right")
 	_input_vector.y = Input.get_axis("ui_up", "ui_down")
 	_input_vector = _input_vector.normalized()
@@ -52,6 +54,7 @@ func _hit(bullet: Bullet) -> void:
 			_can_be_hit = false
 			health -= bullet.damage
 			emit_signal("update_player_health", health)
+			_animated_sprite.play("invuneravel")
 			if health <= 0:
 				game_controller.create_explosion("normal", get_global_position())
 				emit_signal("player_health_depleted")
@@ -59,6 +62,7 @@ func _hit(bullet: Bullet) -> void:
 					bullets.queue_free()
 				get_tree().change_scene_to_file("res://Menu/menu.tscn")
 			await get_tree().create_timer(invunerability_time).timeout
+			_animated_sprite.play("default")
 			_can_be_hit = true
 		
 func _on_hit_box_body_entered(body):
