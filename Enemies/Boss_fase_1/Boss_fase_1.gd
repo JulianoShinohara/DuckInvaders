@@ -12,6 +12,8 @@ var _player: Player
 @export var fire_delay: float = 0.5
 @export var fire_error: float = 0.08
 
+signal boss_killed
+
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 
 var _can_fire: bool = true
