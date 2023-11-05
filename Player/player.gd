@@ -16,6 +16,7 @@ var _can_be_hit: bool = true
 
 signal update_player_health
 signal player_health_depleted
+signal killed
 
 func _ready():
 	_animated_sprite.play("default")	
@@ -60,8 +61,7 @@ func _hit(bullet: Bullet) -> void:
 				emit_signal("player_health_depleted")
 				for bullets in get_tree().get_nodes_in_group("bullet"):
 					bullets.queue_free()
-				get_tree().change_scene_to_file("res://Menu/menu.tscn")
-			await get_tree().create_timer(invunerability_time).timeout
+				emit_signal("killed")
 			_animated_sprite.play("default")
 			_can_be_hit = true
 		

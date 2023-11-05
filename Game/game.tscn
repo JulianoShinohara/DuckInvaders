@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="3_ms2gk"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="4_gmki8"]
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_pmsl2"]
+[ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="4_se68i"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="5_rgi0m"]
 [ext_resource type="Script" path="res://Enemies/Boss_fase_1/PathBoss2D.gd" id="8_m56tq"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="8_wp8g1"]
@@ -50,9 +51,15 @@ text = "Score:00000"
 vertical_alignment = 1
 script = ExtResource("3_fgqn4")
 
+<<<<<<< HEAD
 [node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_pmsl2")]
 position = Vector2(128, 448)
 vanchor = 1
+=======
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("4_se68i")]
+process_mode = 2
+visible = false
+>>>>>>> 7f78c28d50588c1fedd942e90b39ef125820314a
 
 [node name="Netuno" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0aoa")
