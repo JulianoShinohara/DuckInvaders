@@ -7,10 +7,12 @@ class_name Player
 @export var fire_delay: float = 0.10
 @export var fire_error: float = 0.08
 @export var health: int = 3
+@export var invunerability_time: int = 1
 
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
+var _can_be_hit: bool = true
 
 signal update_player_health
 signal player_health_depleted
@@ -46,16 +48,19 @@ func _fire_bullet():
 
 func _hit(bullet: Bullet) -> void:
 	if not is_in_group(bullet.not_target):
-		health -= bullet.damage
-		emit_signal("update_player_health", health)
-		if health <= 0:
-			emit_signal("player_health_depleted")
-			for bullets in get_tree().get_nodes_in_group("bullet"):
-				bullets.queue_free()
-			get_tree().change_scene_to_file("res://Menu/menu.tscn")
-		#	game_controller.create_explosion("small", get_global_position())
+		if(_can_be_hit == true):
+			_can_be_hit = false
+			health -= bullet.damage
+			emit_signal("update_player_health", health)
+			if health <= 0:
+				game_controller.create_explosion("normal", get_global_position())
+				emit_signal("player_health_depleted")
+				for bullets in get_tree().get_nodes_in_group("bullet"):
+					bullets.queue_free()
+				get_tree().change_scene_to_file("res://Menu/menu.tscn")
+			await get_tree().create_timer(invunerability_time).timeout
+			_can_be_hit = true
 		
-
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("bullet"):
 		_hit(body)

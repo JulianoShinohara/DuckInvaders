@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt724p02hihsy"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
-[ext_resource type="Texture2D" uid="uid://db2hpramxgq6r" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
-[ext_resource type="Texture2D" uid="uid://b6b7dswqgxsqn" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
+[ext_resource type="Texture2D" uid="uid://cjsdnxjoo8vcc" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
+[ext_resource type="Texture2D" uid="uid://cpeurhlgvvubh" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
 animations = [{

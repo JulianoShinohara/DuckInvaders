@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cls0tdsf35psh"]
 
-[ext_resource type="Texture2D" uid="uid://c2nbqq4rgnsta" path="res://Style/Images/BackGround/backgroundMenu.jpg" id="1_2ghsk"]
+[ext_resource type="Texture2D" uid="uid://5lavpxdwbmsk" path="res://Style/Images/BackGround/backgroundMenu.jpg" id="1_2ghsk"]
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dlse1"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_wsbcb"]
 

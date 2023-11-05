@@ -3,7 +3,7 @@ extends HBoxContainer
 
 var heart_full = preload("res://Style/Images/Heart/heart_full.png")
 var heart_empty = preload("res://Style/Images/Heart/heart_empty.png")
-@onready var player: Player = $"../Player"
+@onready var player: Player = $"../../Player"
 var player_scene = preload("res://Player/player.tscn")
 
 func _ready():

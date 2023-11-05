@@ -33,7 +33,7 @@ func create_explosion(type: String, pos: Vector2) -> void:
 	get_tree().root.add_child(explosion)	
 	
 func enemy_eliminated(enemy):
-	print("Enemy", enemy)
 	get_tree().call_group("path" , "enemy_eliminated", enemy)
+	get_tree().call_group("score", "update_score", enemy)
 	
 	

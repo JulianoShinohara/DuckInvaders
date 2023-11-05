@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://sh0d8cobkqr3"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/enemy_atirador.gd" id="1_3b177"]
-[ext_resource type="Texture2D" uid="uid://dggb6uoiexqr2" path="res://Style/Images/Enemys/patinho.png" id="2_52wmv"]
+[ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="2_52wmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
 radius = 17.0
