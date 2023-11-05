@@ -51,15 +51,12 @@ text = "Score:00000"
 vertical_alignment = 1
 script = ExtResource("3_fgqn4")
 
-<<<<<<< HEAD
 [node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_pmsl2")]
 position = Vector2(128, 448)
 vanchor = 1
-=======
 [node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("4_se68i")]
 process_mode = 2
 visible = false
->>>>>>> 7f78c28d50588c1fedd942e90b39ef125820314a
 
 [node name="Netuno" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0aoa")
