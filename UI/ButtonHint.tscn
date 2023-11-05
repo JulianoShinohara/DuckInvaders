@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6pua78cr0je"]
+
+[ext_resource type="Texture2D" uid="uid://di6pvdxehc1gb" path="res://UI/button_a_64x32.png" id="1_wawfc"]
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("1_wawfc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("1_wawfc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}],
+"loop": true,
+"name": &"buttonAnimation",
+"speed": 5.0
+}]
+
+[node name="ButtonHint" type="AnimatedSprite2D"]
+z_index = 5
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("4")
+animation = &"buttonAnimation"

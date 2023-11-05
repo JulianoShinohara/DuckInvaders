@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3ilfe2qoeq7h"]
+
+[ext_resource type="Texture2D" uid="uid://bjglsy3ewuln" path="res://UI/MobileInput/Textures/button_a_normal.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://mj0i3tgqt062" path="res://UI/MobileInput/Textures/button_a_pressed.png" id="2"]
+[ext_resource type="Script" path="res://UI/MobileInput/ButtonA.gd" id="3"]
+
+[node name="ButtonA" type="Node2D"]
+script = ExtResource("3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+texture_normal = ExtResource("1")
+texture_pressed = ExtResource("2")
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_TouchScreenButton_released"]

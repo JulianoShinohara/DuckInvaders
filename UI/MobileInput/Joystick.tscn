@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxfmjk3a1rfvo"]
+
+[ext_resource type="Texture2D" uid="uid://c11rjmcryh5jy" path="res://UI/MobileInput/Textures/base.png" id="1_ygscl"]
+[ext_resource type="Texture2D" uid="uid://w4oq668axgry" path="res://UI/MobileInput/Textures/stick.png" id="2_e6wgu"]
+[ext_resource type="Script" path="res://UI/MobileInput/Joystick.gd" id="2_uulxx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwqh1"]
+radius = 64.0
+
+[node name="JoystickBase" type="TouchScreenButton"]
+modulate = Color(1, 1, 1, 0.313726)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("1_ygscl")
+shape = SubResource("CircleShape2D_wwqh1")
+script = ExtResource("2_uulxx")
+
+[node name="JoystickPoint" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_e6wgu")

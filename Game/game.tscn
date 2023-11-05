@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1146oohv83w3"]
+[gd_scene load_steps=15 format=3 uid="uid://d1146oohv83w3"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_26mb4"]
 [ext_resource type="Texture2D" uid="uid://cp40nv1cmlbtj" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Game/Score.gd" id="3_fgqn4"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="3_ms2gk"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="4_gmki8"]
+[ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_pmsl2"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="5_rgi0m"]
 [ext_resource type="Script" path="res://Enemies/Boss_fase_1/PathBoss2D.gd" id="8_m56tq"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="8_wp8g1"]
@@ -48,6 +49,10 @@ scale = Vector2(1.18557, 0.780808)
 text = "Score:00000"
 vertical_alignment = 1
 script = ExtResource("3_fgqn4")
+
+[node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_pmsl2")]
+position = Vector2(128, 448)
+vanchor = 1
 
 [node name="Netuno" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0aoa")
