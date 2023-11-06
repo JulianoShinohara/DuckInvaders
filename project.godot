@@ -25,6 +25,7 @@ window/size/viewport_width=320
 window/size/viewport_height=640
 window/size/mode=2
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [input]
 
@@ -73,3 +74,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
