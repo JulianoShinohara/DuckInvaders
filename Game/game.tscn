@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_pmsl2"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="4_se68i"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="5_rgi0m"]
-[ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_id34d"]
+[ext_resource type="PackedScene" path="res://WinAndLose/win_screen.tscn" id="6_id34d"]
 [ext_resource type="Script" path="res://Enemies/Boss_fase_1/PathBoss2D.gd" id="8_m56tq"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="8_wp8g1"]
 
