@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://boaqvacmya34e"]
+
+[sub_resource type="GDScript" id="GDScript_7nl3j"]
+script/source = "extends Node2D
+
+var credits = (
+		\"A game by Awesome Game Company\\n\\n
+		Programming:\\n
+		- Henrique Moura Bini\\n
+		- Juliano Kendyi Shinohara\\n\\n
+		Art:\\n
+		- Henrique Moura Bini\\n
+		- Juliano Kendyi Shinohara\\n\\n
+		Testers:\\n
+		- Henrique Moura Bini\\n
+		- Juliano Kendyi Shinohara\\n\\n
+		Tools used:\\n
+		- Developed with Godot Engine\\n
+		> https://godotengine.org/license\\n\\n
+		Special thanks\\n
+		- My parents\\n
+		- My friends\\n
+		- My pet\")
+
+
+func _ready():
+	$RichTextLabel.add_text(credits)
+	$RichTextLabel.scroll_to_line(2)
+
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_7nl3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 296.0
+offset_bottom = 616.0
+bbcode_enabled = true
+text = "gfd
+"
+scroll_following = true
+autowrap_mode = 1
+tab_size = 1
+progress_bar_delay = 950
+text_direction = 3

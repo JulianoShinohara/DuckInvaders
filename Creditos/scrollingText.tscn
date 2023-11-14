@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhkj8vy2t6277"]
+
+[ext_resource type="FontFile" uid="uid://ckdp08t33ett5" path="res://Style/Fonts/arialbd.ttf" id="1_lufli"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4g4se"]
+font = ExtResource("1_lufli")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_86gom"]
+font = ExtResource("1_lufli")
+font_size = 10
+
+[node name="scrollingText" type="HBoxContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 39.0
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Titles" type="Label" parent="margin"]
+layout_mode = 2
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_4g4se")
+horizontal_alignment = 1
+
+[node name="margin2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Names" type="Label" parent="margin2"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_86gom")
+horizontal_alignment = 1

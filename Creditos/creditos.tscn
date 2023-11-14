@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://co8jbaseevcfs"]
+
+[ext_resource type="Script" path="res://Creditos/creditos.gd" id="1_aj4go"]
+[ext_resource type="PackedScene" uid="uid://cls0tdsf35psh" path="res://Menu/menu.tscn" id="2_jo8hm"]
+[ext_resource type="Texture2D" uid="uid://b3n25eyk7qo35" path="res://Style/Images/BackGround/creditos.jpg" id="3_trnve"]
+
+[node name="creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aj4go")
+creditsFile = "res://Creditos/example-CREDITS"
+nextScene = ExtResource("2_jo8hm")
+
+[node name="Creditos" type="Sprite2D" parent="."]
+position = Vector2(160, 320)
+texture = ExtResource("3_trnve")
+
+[node name="scrollingContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 624.0
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="musicPlayer" to="." method="_on_music_player_finished"]
