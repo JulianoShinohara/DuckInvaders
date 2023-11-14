@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1146oohv83w3"]
+[gd_scene load_steps=18 format=3 uid="uid://d1146oohv83w3"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_26mb4"]
 [ext_resource type="Texture2D" uid="uid://cp40nv1cmlbtj" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_id34d"]
 [ext_resource type="Script" path="res://Enemies/Boss_fase_1/PathBoss2D.gd" id="8_m56tq"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="8_wp8g1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6muqy"]
 scenes/2/scene = ExtResource("3_ms2gk")
@@ -49,10 +51,12 @@ offset_right = 256.0
 offset_bottom = 26.0
 scale = Vector2(1.18557, 0.780808)
 text = "Score:00000"
+label_settings = SubResource("LabelSettings_1up5w")
 vertical_alignment = 1
 script = ExtResource("3_fgqn4")
 
 [node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_pmsl2")]
+visible = false
 position = Vector2(128, 448)
 vanchor = 1
 
