@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=3 uid="uid://ugpin56quhch"]
+
+[ext_resource type="Script" path="res://Tutorial/tutorial_screen.gd" id="1_a1wij"]
+[ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_jbkxd"]
+[ext_resource type="FontFile" uid="uid://byflvq23h02m8" path="res://Style/Fonts/arialbd.ttf" id="3_o5dun"]
+[ext_resource type="Texture2D" uid="uid://cme30d150nw52" path="res://Style/Images/Tutorial/1234.png" id="4_i4c1t"]
+[ext_resource type="Texture2D" uid="uid://bxqctsew7l2sd" path="res://Style/Images/Tutorial/wasd.png" id="5_qtv2h"]
+[ext_resource type="Texture2D" uid="uid://cjsdnxjoo8vcc" path="res://Style/Images/Nave/nave-01.png" id="6_rwalr"]
+[ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="7_hgcgw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmfts"]
+bg_color = Color(0.545098, 0.545098, 0.545098, 0.533333)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqep1"]
+font = ExtResource("2_jbkxd")
+font_size = 41
+font_color = Color(0.847059, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="TutorialScreen" type="Control" groups=["tutorial"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a1wij")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -320.0
+offset_right = 161.0
+offset_bottom = 318.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jmfts")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 15.0
+offset_right = 70.5
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_cqep1")
+
+[node name="Commands" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.147
+anchor_right = 0.5
+anchor_bottom = 0.147
+offset_left = -143.5
+offset_top = -45.786
+offset_right = 147.5
+offset_bottom = 46.214
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o5dun")
+theme_override_font_sizes/font_size = 20
+text = "Commands:
+                     
+                     - Move the Ship
+"
+uppercase = true
+
+[node name="1234" type="Sprite2D" parent="Panel/Commands"]
+position = Vector2(26, 61)
+texture = ExtResource("4_i4c1t")
+
+[node name="Wasd" type="Sprite2D" parent="Panel/Commands"]
+position = Vector2(87, 61)
+texture = ExtResource("5_qtv2h")
+
+[node name="Elements" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.489
+anchor_right = 0.5
+anchor_bottom = 1.489
+offset_left = -145.5
+offset_top = -811.982
+offset_right = 145.5
+offset_bottom = -649.982
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o5dun")
+theme_override_font_sizes/font_size = 20
+text = "Elements:
+                     
+                     - Player Ship
+					
+
+                     - Enemy"
+uppercase = true
+
+[node name="Nave-01" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(58, 63)
+texture = ExtResource("6_rwalr")
+
+[node name="Patinho" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(59, 144)
+texture = ExtResource("7_hgcgw")
+hframes = 4
+frame = 2
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -56.0
+offset_right = 72.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o5dun")
+theme_override_font_sizes/font_size = 17
+text = "Exit"
+
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

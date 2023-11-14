@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://WinAndLose/game_over_screen.gd" id="1_xmjxx"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_feb3l"]
-[ext_resource type="FontFile" uid="uid://ckdp08t33ett5" path="res://Style/Fonts/arialbd.ttf" id="3_bal0q"]
+[ext_resource type="FontFile" uid="uid://byflvq23h02m8" path="res://Style/Fonts/arialbd.ttf" id="3_bal0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmfts"]
 bg_color = Color(0.545098, 0.545098, 0.545098, 0.533333)
