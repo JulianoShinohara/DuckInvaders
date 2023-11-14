@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cls0tdsf35psh"]
 
-[ext_resource type="Texture2D" uid="uid://5lavpxdwbmsk" path="res://Style/Images/BackGround/backgroundMenu.jpg" id="1_2ghsk"]
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dlse1"]
+[ext_resource type="Texture2D" uid="uid://dt4h4skwvt03m" path="res://Style/Images/BackGround/backgroundMenu.png" id="2_g7uku"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_wsbcb"]
 [ext_resource type="PackedScene" uid="uid://ugpin56quhch" path="res://Tutorial/tutorial_screen.tscn" id="4_bxj4t"]
 
@@ -13,8 +13,8 @@ corner_detail = 4
 script = ExtResource("1_dlse1")
 
 [node name="BackgroundTeste" type="Sprite2D" parent="."]
-scale = Vector2(0.32, 0.426667)
-texture = ExtResource("1_2ghsk")
+scale = Vector2(1, 0.998438)
+texture = ExtResource("2_g7uku")
 centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
