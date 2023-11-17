@@ -1,23 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1146oohv83w3"]
+[gd_scene load_steps=17 format=3 uid="uid://druigsk56ejn1"]
 
-[ext_resource type="Script" path="res://Game/game.gd" id="1_26mb4"]
-[ext_resource type="Texture2D" uid="uid://cp40nv1cmlbtj" path="res://Style/Images/BackGround/netuno.png" id="1_v0aoa"]
-[ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="2_yert4"]
-[ext_resource type="Script" path="res://Game/Score.gd" id="3_fgqn4"]
-[ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="3_ms2gk"]
-[ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="4_gmki8"]
-[ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_pmsl2"]
-[ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="4_se68i"]
-[ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="5_rgi0m"]
-[ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_id34d"]
-[ext_resource type="Script" path="res://Enemies/Boss_fase_1/PathBoss2D.gd" id="8_m56tq"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="8_wp8g1"]
+[ext_resource type="Script" path="res://Stage1/stage1.gd" id="1_av5in"]
+[ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="2_7x46l"]
+[ext_resource type="Script" path="res://Stage1/Score.gd" id="3_dqos8"]
+[ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_207a8"]
+[ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_6x4eo"]
+[ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_34yk0"]
+[ext_resource type="Texture2D" uid="uid://cp40nv1cmlbtj" path="res://Style/Images/BackGround/netuno.png" id="7_h87qw"]
+[ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_xvach"]
+[ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_2vdpo"]
+[ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_bqtpr"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="11_3jmbn"]
+[ext_resource type="PackedScene" uid="uid://b3mrvwxi6oiyy" path="res://Enemies/Boss/path_boss_2d.tscn" id="12_q2nt3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6muqy"]
-scenes/2/scene = ExtResource("3_ms2gk")
-scenes/3/scene = ExtResource("4_gmki8")
+scenes/2/scene = ExtResource("9_2vdpo")
+scenes/3/scene = ExtResource("10_bqtpr")
 
 [sub_resource type="TileSet" id="TileSet_ajpey"]
 sources/0 = SubResource("TileSetScenesCollectionSource_6muqy")
@@ -28,18 +28,12 @@ _data = {
 }
 point_count = 34
 
-[sub_resource type="Curve2D" id="Curve2D_pjl3f"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 24, 48, 0, 0, 0, 0, 264, 48, 0, 0, 0, 0, 24, 48)
-}
-point_count = 3
-
 [node name="Game" type="Node2D" groups=["game"]]
-script = ExtResource("1_26mb4")
+script = ExtResource("1_av5in")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HeartBar" parent="CanvasLayer" instance=ExtResource("5_rgi0m")]
+[node name="HeartBar" parent="CanvasLayer" instance=ExtResource("2_7x46l")]
 offset_left = 1.0
 offset_right = 153.0
 offset_bottom = 48.0
@@ -53,25 +47,26 @@ scale = Vector2(1.18557, 0.780808)
 text = "Score:00000"
 label_settings = SubResource("LabelSettings_1up5w")
 vertical_alignment = 1
-script = ExtResource("3_fgqn4")
+script = ExtResource("3_dqos8")
 
-[node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_pmsl2")]
+[node name="JoystickBase" parent="CanvasLayer" instance=ExtResource("4_207a8")]
 visible = false
 position = Vector2(128, 448)
 vanchor = 1
 
-[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("4_se68i")]
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("5_6x4eo")]
 process_mode = 2
 visible = false
 
-[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("6_id34d")]
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("6_34yk0")]
+process_mode = 2
 visible = false
 
 [node name="Netuno" type="Sprite2D" parent="."]
-texture = ExtResource("1_v0aoa")
+texture = ExtResource("7_h87qw")
 centered = false
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_yert4")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("8_xvach")]
 position = Vector2(160, 608)
 motion_mode = 1
 
@@ -83,8 +78,6 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 
 [node name="PathAtirador2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
-script = ExtResource("8_wp8g1")
+script = ExtResource("11_3jmbn")
 
-[node name="PathBoss2D" type="Path2D" parent="." groups=["path"]]
-curve = SubResource("Curve2D_pjl3f")
-script = ExtResource("8_m56tq")
+[node name="PathBoss2D" parent="." instance=ExtResource("12_q2nt3")]

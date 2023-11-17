@@ -53,6 +53,8 @@ offset_left = -160.0
 offset_top = -320.0
 offset_right = 161.0
 offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jmfts")
 
 [node name="Title" type="Label" parent="Panel"]

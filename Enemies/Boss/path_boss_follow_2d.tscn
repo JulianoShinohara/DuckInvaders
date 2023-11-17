@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3fomybkjmf2g"]
+
+[ext_resource type="Script" path="res://Enemies/Boss/path_boss_follow_2d.gd" id="1_ccvdq"]
+[ext_resource type="PackedScene" uid="uid://cgsgbu7aeco6h" path="res://Enemies/Boss/Boss_fase_1.tscn" id="2_h4wk7"]
+[ext_resource type="Script" path="res://Enemies/Boss/Boss_fase_1.gd" id="3_jg6l7"]
+
+[node name="PathBossFollow2D" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+script = ExtResource("1_ccvdq")
+
+[node name="CharacterBody2D" parent="." groups=["boss_fase_1"] instance=ExtResource("2_h4wk7")]
+position = Vector2(33, 60)
+script = ExtResource("3_jg6l7")

@@ -44,7 +44,7 @@ func _fire_bullet():
 	bullet.position = $BulletPoint.get_global_position()
 	bullet.apply_impulse(Vector2(0,-bullet_speed), Vector2())
 	get_tree().get_root().add_child(bullet)
-	
+	bullet.damage = 10
 	_can_fire = false
 	await get_tree().create_timer(fire_delay).timeout
 	_can_fire = true	

@@ -1,4 +1,4 @@
-class_name Game
+class_name Stage2
 extends Node2D
 
 var _player: Player
@@ -8,7 +8,7 @@ var _all_boss_killed = false
 
 @onready var game_over = $CanvasLayer/GameOverScreen
 @onready var win_game = $CanvasLayer/WinScreen
-@onready var score = $CanvasLayer/Score
+
 
 var Enemy = preload("res://Enemies/Enemy_Atirador/enemy_atirador.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -34,13 +34,14 @@ func _boss_killed():
 func victory():
 	if (_all_enemies_killed and _all_boss_killed):
 		await get_tree().create_timer(0.1).timeout
-		win_game.set_score(score.score)
+		get_tree().paused = true
+		win_game.set_score(game_controller._score)
 		win_game.visible = true
 
 func _on_player_killed():
 	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = true
-	game_over.set_score(score.score)
+	game_over.set_score(game_controller._score)
 	game_over.visible = true
 
 

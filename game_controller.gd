@@ -2,6 +2,7 @@ class_name GameController
 extends Node
 
 var _player: Player
+var _score: int = 0
 var _camera: Camera2D
 var _keys_ui: TextureRect
 var _Keys: int  = 0
@@ -25,7 +26,7 @@ func init(player) -> void:
 
 func get_camera() -> Camera2D:
 	return _camera
-	
+		
 	
 func create_explosion(type: String, pos: Vector2) -> void:
 	var explosion = explosions[type].instantiate()

@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgsgbu7aeco6h"]
+
+[ext_resource type="Texture2D" uid="uid://c74faw6iv61wk" path="res://Style/Images/Enemys/Boss_1.png" id="1_dcrsh"]
+
+[sub_resource type="GDScript" id="GDScript_uwlhd"]
+script/source = "extends CharacterBody2D
+
+#class_name Boss_fase_1
+
+# Enemy
+@export var health: float = 25
+@export var speed: float = 4.0
+var _player: Player
+
+
+@export var bullet_speed: float = 150
+@export var fire_delay: float = 0.5
+@export var fire_error: float = 0.08
+
+signal boss_killed
+
+var _bullet_res: Resource = preload(\"res://Bullet/bullet.tscn\")
+
+var _can_fire: bool = true
+
+# Tiros
+#var fireRate: float 0.4
+func set_player(player: Player):
+	_player = player
+	
+func _ready():
+	pass
+
+func _process(delta):
+	_fire_bullet()
+	
+
+func _fire_bullet():
+	if not _can_fire:
+		return
+	var bullet1: RigidBody2D = _bullet_res.instantiate()
+	bullet1.not_target = \"enemy\"
+	bullet1.position = $BulletPoint1.get_global_position()
+	bullet1.collision_layer = 8
+	bullet1.collision_mask = 8
+	var dir = (_player.global_position - global_position).normalized()
+	bullet1.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
+	get_tree().get_root().add_child(bullet1)
+	
+	var bullet2: RigidBody2D = _bullet_res.instantiate()
+	bullet2.not_target = \"enemy\"
+	bullet2.position = $BulletPoint2.get_global_position()
+	bullet2.collision_layer = 8
+	bullet2.collision_mask = 8
+	bullet2.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
+	get_tree().get_root().add_child(bullet2)
+	
+	_can_fire = false
+	await get_tree().create_timer(fire_delay).timeout
+	_can_fire = true	
+
+func _hit(bullet: Bullet) -> void:
+	if not is_in_group(bullet.not_target):
+		health -= bullet.damage
+		if health <= 0:
+			emit_signal(\"health_depleted\")
+			game_controller.enemy_eliminated(self)
+			game_controller.create_explosion(\"small\", get_global_position())
+			queue_free()
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"bullet\"):
+		_hit(body)
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_uwlhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 4)
+scale = Vector2(1.644, 1.5)
+texture = ExtResource("1_dcrsh")
+hframes = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(33, 4)
+scale = Vector2(1.6, 1.46)
+polygon = PackedVector2Array(0, 5.33333, -7.29927, 14.6667, -15.8151, 16, -26.764, 14.6667, -30.4136, 10, -31.0219, 8, -32.2384, 4.66667, -25.5474, -2.66667, -27.9805, -4, -31.6302, -4, -33.455, -5.33333, -33.455, -8.66667, -29.1971, -11.3333, -27.3723, -14.6667, -24.3309, -16.6667, -19.4647, -16, -16.4234, -12.6667, -15.2068, -10, -15.8151, -6, -17.6399, -0.666667, -12.1655, -0.666667, -6.691, 1.33333, -4.25791, 2.66667, -1.82482, 3.33333)
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+position = Vector2(34, 4)
+scale = Vector2(1.644, 1.5)
+polygon = PackedVector2Array(0, 5.33333, -7.29927, 14.6667, -15.8151, 16, -26.764, 14.6667, -30.4136, 10, -31.0219, 8, -32.2384, 4.66667, -25.5474, -2.66667, -27.9805, -4, -31.6302, -4, -33.455, -5.33333, -33.455, -8.66667, -29.1971, -11.3333, -27.3723, -14.6667, -24.3309, -16.6667, -19.4647, -16, -16.4234, -12.6667, -15.2068, -10, -15.8151, -6, -17.6399, -0.666667, -12.1655, -0.666667, -6.691, 1.33333, -4.25791, 2.66667, -1.82482, 3.33333)
+
+[node name="BulletPoint1" type="Node2D" parent="."]
+position = Vector2(-16, 40)
+
+[node name="BulletPoint2" type="Node2D" parent="."]
+position = Vector2(24, 40)
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

@@ -2,7 +2,7 @@ extends Path2D
 
 
 var timer = 0
-@export var spawnTime = 3
+@export var spawnTime = 1
 @export var enemy_path = preload("res://Enemies/Enemy_Atirador/path_follow_2d.tscn")
 @export var quantityEnemy = 22
 @export var quantityEnemiesOnScreen = 5

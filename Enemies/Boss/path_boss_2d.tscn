@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3mrvwxi6oiyy"]
+
+[sub_resource type="Curve2D" id="Curve2D_pjl3f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, 48, 0, 0, 0, 0, 264, 48, 0, 0, 0, 0, 24, 48)
+}
+point_count = 3
+
+[sub_resource type="GDScript" id="GDScript_ynpfh"]
+script/source = "extends Path2D
+
+@export var enemy_path = preload(\"res://Enemies/Boss/path_boss_follow_2d.tscn\")
+@export var quantityEnemy = 0
+
+signal all_boss_killed
+
+var _player: Player
+var enemiesEliminated = 19
+
+func set_player(player: Player):
+	_player = player
+
+func enemy_eliminated(enemy):
+	if (enemy is Enemy_Atirador):
+		enemiesEliminated -= 1
+	if (enemiesEliminated == 0):
+		var newEnemy = enemy_path.instantiate()
+		newEnemy.set_player(_player)
+		add_child(newEnemy)
+	if (enemy is Boss_fase_1):
+		emit_signal(\"all_boss_killed\")
+
+
+		
+		
+"
+
+[node name="PathBoss2D" type="Path2D" groups=["path"]]
+curve = SubResource("Curve2D_pjl3f")
+script = SubResource("GDScript_ynpfh")
