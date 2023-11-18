@@ -59,8 +59,6 @@ func _hit(bullet: Bullet) -> void:
 			if health <= 0:
 				game_controller.create_explosion("normal", get_global_position())
 				emit_signal("player_health_depleted")
-				for bullets in get_tree().get_nodes_in_group("bullet"):
-					bullets.queue_free()
 				emit_signal("killed")
 			await get_tree().create_timer(invunerability_time).timeout
 			_animated_sprite.play("default")

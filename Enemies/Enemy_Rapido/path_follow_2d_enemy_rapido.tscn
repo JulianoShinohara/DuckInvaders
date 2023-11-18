@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://k4k6br3fr3xt"]
+
+[ext_resource type="Script" path="res://Enemies/Enemy_Rapido/PathFollow2D_enemy_rapido.gd" id="1_rm3t1"]
+[ext_resource type="PackedScene" uid="uid://cx6k7ee4px2ud" path="res://Enemies/Enemy_Rapido/enemy_rapido.tscn" id="2_fx2pq"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(290, 46)
+rotation = 3.14159
+rotates = false
+cubic_interp = false
+script = ExtResource("1_rm3t1")
+
+[node name="Rapido" parent="." instance=ExtResource("2_fx2pq")]

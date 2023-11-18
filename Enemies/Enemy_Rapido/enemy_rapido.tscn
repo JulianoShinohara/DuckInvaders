@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx6k7ee4px2ud"]
+
+[ext_resource type="Script" path="res://Enemies/Enemy_Rapido/enemy_rapido.gd" id="1_tnkvo"]
+[ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="2_g806n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
+radius = 17.0
+
+[node name="Rapido" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_tnkvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_g806n")
+hframes = 4
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_dnjfd")
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.95, 0.95)
+shape = SubResource("CircleShape2D_dnjfd")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
