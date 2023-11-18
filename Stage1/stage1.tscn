@@ -79,5 +79,6 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 [node name="PathAtirador2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("11_3jmbn")
+health = 5
 
 [node name="PathBoss2D" parent="." instance=ExtResource("12_q2nt3")]
