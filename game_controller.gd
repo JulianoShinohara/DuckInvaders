@@ -14,6 +14,13 @@ var explosions = {
 	"tiny":   preload("res://Explosion/explosion_tiny.tscn")
 }
 
+var powerups = {
+	"rapid": preload("res://Explosion/explosion.tscn"),
+	"damage":  preload("res://Explosion/explosion_small.tscn"),
+	"multi":   preload("res://Explosion/explosion_tiny.tscn"),
+	"heart":   preload("res://Explosion/explosion_tiny.tscn")
+}
+
 # PRIVATE METHODS
 ############################################
 
@@ -34,6 +41,7 @@ func create_explosion(type: String, pos: Vector2) -> void:
 	get_tree().root.add_child(explosion)	
 	
 func enemy_eliminated(enemy):
+	# Ao matar um inimigo fazer a lógica para spawnar um powerup na posição do inimigo morto e fazer com ele dessa até o fim do mapa
 	get_tree().call_group("path" , "enemy_eliminated", enemy)
 	get_tree().call_group("score", "update_score", enemy)
 	
