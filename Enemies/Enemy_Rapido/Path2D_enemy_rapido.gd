@@ -2,10 +2,14 @@ extends Path2D
 
 
 var timer = 0
-@export var spawnTime = 1
+@export var spawnTime = 6
 @export var enemy_path = preload("res://Enemies/Enemy_Rapido/path_follow_2d_enemy_rapido.tscn")
 @export var quantityEnemy = 22
 @export var quantityEnemiesOnScreen = 5
+@export var health = 7
+@export var fire_delay = 0.4
+@export var bullet_speed = 200
+@export var speed = 100
 signal all_enemies_killed
 var _enemiesInLife = 0
 var _enemiesEliminated = 0
@@ -22,6 +26,9 @@ func _process(delta):
 		var newEnemy = enemy_path.instantiate()
 		newEnemy.progress = randf_range(0, 300)
 		newEnemy.set_player(_player)
+		newEnemy.health = health
+		newEnemy.fire_delay = fire_delay
+		newEnemy.bullet_speed = bullet_speed
 		add_child(newEnemy)
 		timer = 0
 		_enemiesInLife += 1

@@ -3,14 +3,10 @@ extends CharacterBody2D
 class_name Boss_fase_1
 
 # Enemy
-@export var health: float = 25
-@export var speed: float = 4.0
+var health: float = 25
 var _player: Player
-
-
-@export var bullet_speed: float = 150
-@export var fire_delay: float = 0.5
-@export var fire_error: float = 0.08
+var bullet_speed: float = 150
+var fire_delay: float = 0.5
 
 signal boss_killed
 

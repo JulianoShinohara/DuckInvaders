@@ -10,8 +10,11 @@ point_count = 4
 script/source = "extends Path2D
 
 @export var enemy_path = preload(\"res://Enemies/Boss/path_boss_follow_2d.tscn\")
-@export var quantityEnemy = 0
-
+@export var quantityEnemy = 1
+@export var health = 25
+@export var fire_delay = 0.6
+@export var bullet_speed = 150
+@export var speed = 60
 signal all_boss_killed
 
 var _player: Player
@@ -21,10 +24,13 @@ func set_player(player: Player):
 	_player = player
 
 func enemy_eliminated(enemy):
-	if (enemy is Enemy_Atirador):
+	if not (enemy is Boss_fase_1):
 		enemiesEliminated -= 1
 	if (enemiesEliminated == 0):
 		var newEnemy = enemy_path.instantiate()
+		newEnemy.health = health
+		newEnemy.fire_delay = fire_delay
+		newEnemy.bullet_speed = bullet_speed
 		newEnemy.set_player(_player)
 		add_child(newEnemy)
 	if (enemy is Boss_fase_1):

@@ -4,7 +4,7 @@ class_name Player
 
 @export var speed: float = 300
 @export var bullet_speed: float = 400
-@export var fire_delay: float = 0.10
+@export var fire_delay: float = 0.12
 @export var fire_error: float = 0.08
 @export var health: int = 3
 @export var invunerability_time: int = 3
@@ -44,7 +44,6 @@ func _fire_bullet():
 	bullet.position = $BulletPoint.get_global_position()
 	bullet.apply_impulse(Vector2(0,-bullet_speed), Vector2())
 	get_tree().get_root().add_child(bullet)
-	bullet.damage = 10
 	_can_fire = false
 	await get_tree().create_timer(fire_delay).timeout
 	_can_fire = true	
