@@ -10,7 +10,7 @@ var timer = 0
 @export var fire_delay = 0.4
 @export var bullet_speed = 200
 @export var speed = 100
-signal all_enemies_killed
+signal all_enemies_rapido_killed
 var _enemiesInLife = 0
 var _enemiesEliminated = 0
 var _player: Player
@@ -38,6 +38,6 @@ func enemy_eliminated(enemy):
 	if (enemy is Enemy_Rapido):
 		_enemiesInLife -= 1
 		_enemiesEliminated += 1
-		if (_enemiesEliminated == 22):
-			emit_signal("all_enemies_killed")
+		if (quantityEnemy + _enemiesInLife == 0):
+			emit_signal("all_enemies_rapido_killed")
 		

@@ -5,7 +5,6 @@
 
 [node name="PathFollow2D" type="PathFollow2D"]
 position = Vector2(290, 46)
-rotation = 3.14159
 rotates = false
 cubic_interp = false
 script = ExtResource("1_rm3t1")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cx6k7ee4px2ud"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Rapido/enemy_rapido.gd" id="1_tnkvo"]
-[ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="2_g806n"]
+[ext_resource type="Texture2D" uid="uid://cnfdmrqo7ltbc" path="res://Style/Images/Enemys/pato_rapido.png" id="2_15tii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
 radius = 17.0
@@ -11,7 +11,7 @@ script = ExtResource("1_tnkvo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_g806n")
+texture = ExtResource("2_15tii")
 hframes = 4
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
