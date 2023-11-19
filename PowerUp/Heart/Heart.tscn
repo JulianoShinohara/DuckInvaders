@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7gte578fxhx4"]
+
+[ext_resource type="Script" path="res://PowerUp/Heart/Heart.gd" id="1_ygefs"]
+[ext_resource type="Texture2D" uid="uid://cycm5qrt1obs7" path="res://Style/Images/Heart/heart_full.png" id="2_ygq7j"]
+
+[node name="Heart" type="RigidBody2D"]
+scale = Vector2(0.6, 0.6)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ygefs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ygq7j")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-4, -20, 0.200001, -17, 5.2, -22, 16, -22, 16, -19.9, 24, -12.7, 24, 0, 2.9, 22, -4, 22, -4, 19.8, -24, 0.799999, -24, -12.7, -16, -19.9, -16, -22, -4, -22)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-4, -20, 0.200001, -17, 5.2, -22, 16, -22, 16, -19.9, 24, -12.7, 24, 0, 2.9, 22, -4, 22, -4, 19.8, -24, 0.799999, -24, -12.7, -16, -19.9, -16, -22, -4, -22)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

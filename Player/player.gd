@@ -52,8 +52,7 @@ func _hit(bullet: Bullet) -> void:
 	if not is_in_group(bullet.not_target):
 		if(_can_be_hit == true):
 			_can_be_hit = false
-			health -= bullet.damage
-			emit_signal("update_player_health", health)
+			set_player_health(health - bullet.damage)
 			_animated_sprite.play("invuneravel")
 			if health <= 0:
 				game_controller.create_explosion("normal", get_global_position())
@@ -66,3 +65,7 @@ func _hit(bullet: Bullet) -> void:
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("bullet"):
 		_hit(body)
+		
+func set_player_health(health: int):
+	self.health = health
+	emit_signal("update_player_health", health)
