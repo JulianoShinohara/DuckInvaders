@@ -39,7 +39,6 @@ func enemy_eliminated(enemy):
 	if (enemy is Enemy_Atirador):
 		_enemiesInLife -= 1
 		_enemiesEliminated += 1
-		print(quantityEnemy + _enemiesInLife == 0)
 		if (quantityEnemy + _enemiesInLife == 0):
 			emit_signal("all_enemies_killed")
 		

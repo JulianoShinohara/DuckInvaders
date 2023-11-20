@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://sh0d8cobkqr3"]
+[gd_scene load_steps=9 format=3 uid="uid://sh0d8cobkqr3"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/enemy_atirador.gd" id="1_3b177"]
 [ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="2_52wmv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8oq5"]
+atlas = ExtResource("2_52wmv")
+region = Rect2(0, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ralx0"]
+atlas = ExtResource("2_52wmv")
+region = Rect2(31, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foi8b"]
+atlas = ExtResource("2_52wmv")
+region = Rect2(62, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvfh2"]
+atlas = ExtResource("2_52wmv")
+region = Rect2(93, 0, 31, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmuv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8oq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ralx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foi8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvfh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
 radius = 17.0
@@ -9,10 +45,11 @@ radius = 17.0
 [node name="Atirador" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_3b177")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_52wmv")
-hframes = 4
+sprite_frames = SubResource("SpriteFrames_qmuv3")
+autoplay = "default"
+frame_progress = 0.960137
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
 

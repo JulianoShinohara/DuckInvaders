@@ -8,11 +8,23 @@ class_name Player
 @export var fire_error: float = 0.08
 @export var health: int = 3
 @export var invunerability_time: int = 3
-
+@onready var _rapid_fire_timer: SceneTreeTimer = get_tree().create_timer(0)
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
 var _can_be_hit: bool = true
+
+func set_rapid_fire():
+	self.fire_delay = 0.04
+	self.bullet_speed = 450
+	if(_rapid_fire_timer.time_left > 0):
+		_rapid_fire_timer.set_time_left(_rapid_fire_timer.time_left + 5)
+	else:
+		_rapid_fire_timer = get_tree().create_timer(5)
+		await _rapid_fire_timer.timeout
+		self.bullet_speed = 400
+		self.fire_delay = 0.12
+	
 
 signal update_player_health
 signal player_health_depleted
@@ -35,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	_fire_bullet()
+	
+
 	
 
 func _fire_bullet():

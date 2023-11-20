@@ -6,7 +6,7 @@ class_name Enemy_Atirador
 @export var health: float = 10
 
 var _player: Player
-
+@onready var _last_postion: Vector2 = self.global_position
 
 @export var bullet_speed: float = 150
 @export var fire_delay: float = 1
@@ -25,8 +25,14 @@ func set_player(player: Player):
 	_player = player
 
 func _process(delta):
-	
+	var dir = self.global_position - _last_postion
+	if dir.x > 0:
+		$Sprite2D.flip_h = false
+	elif dir.x < 0:
+		$Sprite2D.flip_h = true
 	_fire_bullet()
+	
+	_last_postion = self.global_position
 	
 
 func _fire_bullet():

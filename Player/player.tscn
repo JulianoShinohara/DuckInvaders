@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
 [ext_resource type="Texture2D" uid="uid://cjsdnxjoo8vcc" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
 [ext_resource type="Texture2D" uid="uid://cpeurhlgvvubh" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
-[ext_resource type="Texture2D" uid="uid://cfgq47748fk65" path="res://Style/Images/Nave/nave-03.png" id="4_bx5b4"]
-[ext_resource type="Texture2D" uid="uid://cr1fltnwdm5tn" path="res://Style/Images/Nave/nave-04.png" id="5_3mtu7"]
-[ext_resource type="Texture2D" uid="uid://ccmni72flpa0j" path="res://Style/Images/Nave/nave-05.png" id="6_n7rn8"]
+[ext_resource type="Texture2D" uid="uid://tdk0r3hvdutm" path="res://Style/Images/Nave/nave-03.png" id="4_bx5b4"]
+[ext_resource type="Texture2D" uid="uid://c04o07uvjdom5" path="res://Style/Images/Nave/nave-04.png" id="5_3mtu7"]
+[ext_resource type="Texture2D" uid="uid://crswvb6q8ku7m" path="res://Style/Images/Nave/nave-05.png" id="6_n7rn8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
 animations = [{
@@ -43,7 +43,6 @@ script = ExtResource("1_3w80o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_tdkd1")
-animation = &"invuneravel"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.78, 0.78)
