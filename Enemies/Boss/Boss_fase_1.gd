@@ -11,7 +11,7 @@ var _player: Player
 @export var bullet_speed: float = 150
 @export var fire_delay: float = 0.5
 @export var fire_error: float = 0.08
-@onready var bullet_points = [$BulletPoint1,$BulletPoint2,$BulletPoint3]
+@onready var bullet_points = [$BulletPoint1,$BulletPoint2]
 signal boss_killed
 
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")

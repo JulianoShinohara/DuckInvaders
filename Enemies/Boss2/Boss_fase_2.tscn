@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0i7gy454unrd"]
 
-[ext_resource type="Script" path="res://Enemies/Boss/Boss_fase_1.gd" id="1_p5cel"]
+[ext_resource type="Script" path="res://Enemies/Boss2/Boss_fase_2.gd" id="1_v5h0h"]
 [ext_resource type="Texture2D" uid="uid://dqx15a8jbscmt" path="res://Style/Images/Enemys/Boss_2.png" id="2_5d6y0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldmar"]
@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_p5cel")
+script = ExtResource("1_v5h0h")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, 4)

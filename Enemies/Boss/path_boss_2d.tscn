@@ -24,7 +24,7 @@ func set_player(player: Player):
 	_player = player
 
 func enemy_eliminated(enemy):
-	if not (enemy is Boss_fase_2):
+	if not (enemy is Boss_fase_1):
 		enemiesEliminated -= 1
 	if (enemiesEliminated == 0):
 		var newEnemy = enemy_path.instantiate()
@@ -33,7 +33,7 @@ func enemy_eliminated(enemy):
 		newEnemy.bullet_speed = bullet_speed
 		newEnemy.set_player(_player)
 		add_child(newEnemy)
-	if (enemy is Boss_fase_2):
+	if (enemy is Boss_fase_1):
 		emit_signal(\"all_boss_killed\")
 
 
