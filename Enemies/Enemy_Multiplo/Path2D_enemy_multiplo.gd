@@ -35,7 +35,7 @@ func _process(delta):
 		quantityEnemy -= 1
 
 func enemy_eliminated(enemy):
-	if (enemy is Enemy_Rapido):
+	if (enemy is Enemy_Multiplo):
 		_enemiesInLife -= 1
 		_enemiesEliminated += 1
 		if (quantityEnemy + _enemiesInLife == 0):

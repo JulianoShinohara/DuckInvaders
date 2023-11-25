@@ -12,7 +12,7 @@ class_name Player
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
-var _can_be_hit: bool = true
+var _can_be_hit: bool = false
 
 func set_rapid_fire():
 	self.fire_delay = 0.04

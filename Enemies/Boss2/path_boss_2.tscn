@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhud74eytqgg7"]
+
+[ext_resource type="Script" path="res://Enemies/Boss2/PathBoss2.gd" id="1_j8xfr"]
+
+[sub_resource type="Curve2D" id="Curve2D_pjl3f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 273, 47, 0, 0, 0, 0, 20, 47, 0, 0, 0, 0, 147, 94, 0, 0, 0, 0, 273, 48)
+}
+point_count = 4
+
+[node name="PathBoss2D" type="Path2D" groups=["path"]]
+curve = SubResource("Curve2D_pjl3f")
+script = ExtResource("1_j8xfr")
