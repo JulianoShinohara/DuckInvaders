@@ -14,8 +14,8 @@ var explosions = {
 var powerups = {
 	"heart":   preload("res://PowerUp/Heart/Heart.tscn"),
 	"rapid": preload("res://PowerUp/Rapid/Rapid.tscn"),
-	"damage":  preload("res://Explosion/explosion_small.tscn"),
-	"multi":   preload("res://Explosion/explosion_tiny.tscn")
+	"damage":  preload("res://PowerUp/Damage/Damage.tscn"),
+	"spread":   preload("res://PowerUp/Spread/Spread.tscn")
 }
 
 # PRIVATE METHODS
@@ -39,9 +39,9 @@ func enemy_eliminated(enemy):
 	var keyPowerUp
 	if(randi_range(1,100) > 90):
 		if(_player.health < 3):
-			keyPowerUp = powerups.keys()[randi_range(0,1)]
+			keyPowerUp = powerups.keys()[randi_range(0,3)]
 		else:
-			keyPowerUp = powerups.keys()[randi_range(1,1)]
+			keyPowerUp = powerups.keys()[randi_range(1,3)]
 		var powerup = powerups[keyPowerUp].instantiate()
 		powerup.global_position = enemy.get_global_position()
 		get_tree().root.call_deferred("add_child", powerup)
