@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_086rq"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_3o5ni"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_oluxp"]
-[ext_resource type="Texture2D" uid="uid://cp40nv1cmlbtj" path="res://Style/Images/BackGround/netuno.png" id="7_d6yfo"]
+[ext_resource type="Texture2D" uid="uid://dvwn0g6mttu6f" path="res://Style/Images/BackGround/Marte_fase3.png" id="7_wfd30"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_mcw52"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_js4b3"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_sqqsf"]
@@ -65,8 +65,7 @@ process_mode = 2
 visible = false
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(1, 1.09522)
-texture = ExtResource("7_d6yfo")
+texture = ExtResource("7_wfd30")
 centered = false
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("8_mcw52")]
