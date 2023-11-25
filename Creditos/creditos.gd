@@ -106,12 +106,12 @@ func _process(delta):
 	# This workaround fix it
 	if is_first_frame:
 		viewSize = get_viewport().size
-		scrollingContainer.position.y = viewSize.y-350
+		scrollingContainer.position.y = viewSize.y-950
 		is_first_frame = false
 	
 	if not done:
 		# If the scroll is not yet ended, keep to scroll it
-		if scrollingContainer.position.y+scrollingContainer.size.y > 0:
+		if scrollingContainer.position.y+scrollingContainer.size.y-250 > 0:
 			scrollingContainer.position.y -= speed*delta
 		else:
 			end()

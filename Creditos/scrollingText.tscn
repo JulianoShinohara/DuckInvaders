@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhkj8vy2t6277"]
 
-[ext_resource type="FontFile" uid="uid://ckdp08t33ett5" path="res://Style/Fonts/arialbd.ttf" id="1_lufli"]
+[ext_resource type="FontFile" uid="uid://18wrkvado2n4" path="res://Style/Fonts/arialbd.ttf" id="1_lufli"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4g4se"]
 font = ExtResource("1_lufli")

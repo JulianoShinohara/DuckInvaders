@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Creditos/creditos.gd" id="1_aj4go"]
 [ext_resource type="PackedScene" uid="uid://cls0tdsf35psh" path="res://Menu/menu.tscn" id="2_jo8hm"]
-[ext_resource type="Texture2D" uid="uid://b3n25eyk7qo35" path="res://Style/Images/BackGround/creditos.jpg" id="3_trnve"]
+[ext_resource type="Texture2D" uid="uid://cjy8hot10g72n" path="res://Style/Images/BackGround/creditos.jpg" id="3_trnve"]
 
 [node name="creditos" type="Control"]
 layout_mode = 3

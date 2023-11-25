@@ -85,14 +85,14 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("11_w3uk0")
 spawnTime = 4
-quantityEnemy = 12
+quantityEnemy = 1
 quantityEnemiesOnScreen = 3
 health = 5
 
 [node name="PathRapido2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("12_qhnne")
-quantityEnemy = 9
+quantityEnemy = 1
 quantityEnemiesOnScreen = 1
 health = 4
 bullet_speed = 160
@@ -105,3 +105,4 @@ enemy_path = ExtResource("15_jrvtj")
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("14_p2j77")
+quantityEnemy = 1
