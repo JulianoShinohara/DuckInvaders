@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://iawe3qbot3tu"]
+
+[ext_resource type="Script" path="res://Enemies/Enemy_Multiplo/enemy_multiplo.gd" id="1_e5lch"]
+[ext_resource type="Texture2D" uid="uid://cihug6ynigqi7" path="res://Style/Images/Enemys/pato_multiple.png" id="2_shdc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd81e"]
+atlas = ExtResource("2_shdc6")
+region = Rect2(0, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2c4d"]
+atlas = ExtResource("2_shdc6")
+region = Rect2(31, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy88h"]
+atlas = ExtResource("2_shdc6")
+region = Rect2(62, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc3n4"]
+atlas = ExtResource("2_shdc6")
+region = Rect2(93, 0, 31, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahe58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd81e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2c4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy88h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc3n4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
+radius = 17.0
+
+[node name="Multiplo" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_e5lch")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_ahe58")
+frame = 3
+frame_progress = 1.0
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_dnjfd")
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.95, 0.95)
+shape = SubResource("CircleShape2D_dnjfd")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx6k7ee4px2ud"]
+[gd_scene load_steps=9 format=3 uid="uid://cx6k7ee4px2ud"]
 
 [ext_resource type="Script" path="res://Enemies/Enemy_Rapido/enemy_rapido.gd" id="1_tnkvo"]
-[ext_resource type="Texture2D" uid="uid://cnfdmrqo7ltbc" path="res://Style/Images/Enemys/pato_rapido.png" id="2_15tii"]
+[ext_resource type="Texture2D" uid="uid://cg7yty1rcb5m5" path="res://Style/Images/Enemys/pato_rapido.png" id="2_15tii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyk3c"]
+atlas = ExtResource("2_15tii")
+region = Rect2(0, 0, 31, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4jid"]
+atlas = ExtResource("2_15tii")
+region = Rect2(31, 0, 31, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3eg3"]
+atlas = ExtResource("2_15tii")
+region = Rect2(62, 0, 31, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxkpe"]
+atlas = ExtResource("2_15tii")
+region = Rect2(93, 0, 31, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dtsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyk3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4jid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3eg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxkpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
 radius = 17.0
@@ -9,10 +45,9 @@ radius = 17.0
 [node name="Rapido" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_tnkvo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_15tii")
-hframes = 4
+sprite_frames = SubResource("SpriteFrames_0dtsq")
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
 

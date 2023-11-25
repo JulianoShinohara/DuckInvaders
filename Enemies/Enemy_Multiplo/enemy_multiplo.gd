@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name Enemy_Rapido
+class_name Enemy_Multiplo
 
 # Enemy
 @export var health: float = 10
