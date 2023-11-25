@@ -14,7 +14,7 @@ var _player: Player
 @onready var _last_postion: Vector2 = self.global_position
 var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 @onready var _animated_sprite = $Sprite2D
-
+@onready var bullet_points = [$BulletPoint1,$BulletPoint2,$BulletPoint3]
 var _can_fire: bool = true
 
 signal health_depleted
@@ -38,14 +38,16 @@ func _process(delta):
 func _fire_bullet():
 	if not _can_fire:
 		return
-	var bullet: RigidBody2D = _bullet_res.instantiate()
-	bullet.not_target = "enemy"
-	bullet.position = $BulletPoint.get_global_position()
-	bullet.collision_layer = 8
-	bullet.collision_mask = 8
-	var dir = (_player.global_position - global_position).normalized()
-	bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
-	get_tree().get_root().add_child(bullet)
+	for i in bullet_points:
+		var bullet: RigidBody2D = _bullet_res.instantiate()
+		bullet.not_target = "enemy"
+		bullet.position = i.get_global_position()
+		bullet.collision_layer = 8
+		bullet.collision_mask = 8
+		var dir = (_player.global_position - global_position).normalized()
+		#bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
+		bullet.apply_impulse(Vector2(0, bullet_speed), Vector2())
+		get_tree().get_root().add_child(bullet)
 	
 	_can_fire = false
 	await get_tree().create_timer(fire_delay).timeout

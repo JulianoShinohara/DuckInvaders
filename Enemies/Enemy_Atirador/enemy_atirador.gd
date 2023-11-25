@@ -44,7 +44,8 @@ func _fire_bullet():
 	bullet.collision_layer = 8
 	bullet.collision_mask = 8
 	var dir = (_player.global_position - global_position).normalized()
-	bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
+	#bullet.apply_impulse(Vector2(0, -bullet_speed).rotated(dir.angle() + PI / 2.0), Vector2())
+	bullet.apply_impulse(Vector2(0, bullet_speed), Vector2())
 	get_tree().get_root().add_child(bullet)
 	
 	_can_fire = false

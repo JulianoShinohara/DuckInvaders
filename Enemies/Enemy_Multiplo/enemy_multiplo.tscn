@@ -56,11 +56,17 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_dnjfd")
 
-[node name="BulletPoint" type="Node2D" parent="."]
-position = Vector2(0, 40)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.95, 0.95)
 shape = SubResource("CircleShape2D_dnjfd")
+
+[node name="BulletPoint1" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="BulletPoint3" type="Node2D" parent="."]
+position = Vector2(-15, 40)
+
+[node name="BulletPoint2" type="Node2D" parent="."]
+position = Vector2(15, 40)
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
