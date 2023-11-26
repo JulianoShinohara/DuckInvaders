@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_s62t5"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_17otj"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_4cued"]
-[ext_resource type="Texture2D" uid="uid://djq8fiqf1b3y6" path="res://Style/Images/BackGround/Terra_fase_4.png" id="7_h6cwg"]
+[ext_resource type="Texture2D" uid="uid://ch0vl86bnbhmu" path="res://Style/Images/BackGround/Terra_fase_4.png" id="7_h6cwg"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_4tgkw"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_hw6lh"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_sbwrp"]
@@ -30,7 +30,7 @@ _data = {
 }
 point_count = 22
 
-[node name="Game" type="Node2D" groups=["game"]]
+[node name="Game2" type="Node2D" groups=["game"]]
 script = ExtResource("1_aeio1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
