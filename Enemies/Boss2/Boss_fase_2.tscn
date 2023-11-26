@@ -14,7 +14,7 @@ region = Rect2(34, 0, 34, 40)
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmyhb"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 25.0,
 "texture": SubResource("AtlasTexture_ldmar")
 }, {
 "duration": 1.0,
@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -32,6 +32,7 @@ script = ExtResource("1_v5h0h")
 position = Vector2(6, 4)
 scale = Vector2(1.644, 1.5)
 sprite_frames = SubResource("SpriteFrames_hmyhb")
+autoplay = "default"
 frame_progress = 0.882533
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://druigsk56ejn1"]
+[gd_scene load_steps=18 format=3 uid="uid://druigsk56ejn1"]
 
 [ext_resource type="Script" path="res://Stage1/stage1.gd" id="1_av5in"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="2_7x46l"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_207a8"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_6x4eo"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_34yk0"]
-[ext_resource type="Texture2D" uid="uid://2jhk2dt0gv1l" path="res://Style/Images/BackGround/Saturno_fase1.png" id="7_g1w4r"]
+[ext_resource type="Texture2D" uid="uid://n4h2mbsd2i1h" path="res://Style/Images/BackGround/Saturno_fase1.png" id="7_g1w4r"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_xvach"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_2vdpo"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_bqtpr"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Atirador/Path2D.gd" id="11_3jmbn"]
 [ext_resource type="PackedScene" uid="uid://b3mrvwxi6oiyy" path="res://Enemies/Boss/path_boss_2d.tscn" id="12_q2nt3"]
+[ext_resource type="Script" path="res://Enemies/Boss/PathBoss2D.gd" id="13_yfayu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 
@@ -82,3 +83,4 @@ script = ExtResource("11_3jmbn")
 health = 5
 
 [node name="PathBoss2D" parent="." instance=ExtResource("12_q2nt3")]
+script = ExtResource("13_yfayu")

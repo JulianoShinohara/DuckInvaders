@@ -49,7 +49,7 @@ script = ExtResource("1_3b177")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_qmuv3")
 autoplay = "default"
-frame_progress = 0.960137
+frame_progress = 0.701911
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
 

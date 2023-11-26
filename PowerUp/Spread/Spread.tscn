@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqa3w4k0n6wvo"]
 
 [ext_resource type="Script" path="res://PowerUp/Spread/Spread.gd" id="1_dilnf"]
-[ext_resource type="Texture2D" uid="uid://dalosqpi3d7kw" path="res://icon.svg" id="2_8jcm7"]
+[ext_resource type="Texture2D" uid="uid://brml5hsc7ty52" path="res://Style/Images/PoweUp/TripleFireUpgrade.png" id="2_i31yt"]
 
 [node name="Spread" type="RigidBody2D"]
 collision_layer = 0
@@ -10,21 +10,21 @@ script = ExtResource("1_dilnf")
 
 [node name="tempSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_8jcm7")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_i31yt")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(0, 1)
-scale = Vector2(0.2, 0.2)
-polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+scale = Vector2(0.62, 0.62)
+polygon = PackedVector2Array(20.6897, -13.7931, 24.1379, 0, 22.4138, 8.62069, 15.5172, 18.9655, 0, 24.1379, -15.5172, 18.9655, -22.4138, 10.3448, -24.1379, 0, -20.6897, -12.069, -13.7931, -20.6897, 0, -24.1379, 12.069, -20.6897)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.18, 0.18)
-polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(20.6897, -13.7931, 24.1379, 0, 22.4138, 8.62069, 15.5172, 18.9655, 0, 24.1379, -15.5172, 18.9655, -22.4138, 10.3448, -24.1379, 0, -20.6897, -12.069, -13.7931, -20.6897, 0, -24.1379, 12.069, -20.6897)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

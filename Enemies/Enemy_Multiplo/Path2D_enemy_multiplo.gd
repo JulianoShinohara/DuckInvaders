@@ -2,15 +2,15 @@ extends Path2D
 
 
 var timer = 0
-@export var spawnTime = 6
+@export var spawnTime = 8
 @export var enemy_path = preload("res://Enemies/Enemy_Multiplo/path_follow_2d_enemy_multiplo.tscn")
-@export var quantityEnemy = 22
-@export var quantityEnemiesOnScreen = 5
+@export var quantityEnemy = 6
+@export var quantityEnemiesOnScreen = 1
 @export var health = 7
-@export var fire_delay = 0.4
-@export var bullet_speed = 200
-@export var speed = 100
-signal all_enemies_rapido_killed
+@export var fire_delay = 0.7
+@export var bullet_speed = 150
+@export var speed = 70
+signal all_enemies_multiplo_killed
 var _enemiesInLife = 0
 var _enemiesEliminated = 0
 var _player: Player

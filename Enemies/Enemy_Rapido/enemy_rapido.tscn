@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnjfd"]
@@ -48,6 +48,8 @@ script = ExtResource("1_tnkvo")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_0dtsq")
+autoplay = "default"
+frame_progress = 0.0242196
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy"]]
 
