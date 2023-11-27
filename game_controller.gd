@@ -37,7 +37,7 @@ func enemy_eliminated(enemy):
 	# Ao matar um inimigo fazer a lógica para spawnar um powerup na posição do inimigo morto e fazer com ele dessa até o fim do mapa
 	#var powerup = powerups["ra"]
 	var keyPowerUp
-	if(randi_range(1,100) > 10):
+	if(randi_range(1,100) > 90):
 		if(_player.health < 3):
 			keyPowerUp = powerups.keys()[randi_range(0,3)]
 		else:

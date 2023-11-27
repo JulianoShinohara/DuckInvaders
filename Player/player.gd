@@ -17,7 +17,7 @@ var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
 var _spread_shot: bool = false
-@export var can_be_hit: bool = false
+@export var can_be_hit: bool = true
 
 func set_rapid_fire():
 	self.fire_delay = 0.04
