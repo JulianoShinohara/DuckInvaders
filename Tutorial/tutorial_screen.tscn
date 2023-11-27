@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://ugpin56quhch"]
+[gd_scene load_steps=14 format=3 uid="uid://ugpin56quhch"]
 
 [ext_resource type="Script" path="res://Tutorial/tutorial_screen.gd" id="1_a1wij"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_jbkxd"]
-[ext_resource type="FontFile" uid="uid://byflvq23h02m8" path="res://Style/Fonts/arialbd.ttf" id="3_o5dun"]
-[ext_resource type="Texture2D" uid="uid://cme30d150nw52" path="res://Style/Images/Tutorial/1234.png" id="4_i4c1t"]
-[ext_resource type="Texture2D" uid="uid://bxqctsew7l2sd" path="res://Style/Images/Tutorial/wasd.png" id="5_qtv2h"]
+[ext_resource type="FontFile" uid="uid://18wrkvado2n4" path="res://Style/Fonts/arialbd.ttf" id="3_o5dun"]
+[ext_resource type="Texture2D" uid="uid://duv4vse37v336" path="res://Style/Images/Tutorial/1234.png" id="4_i4c1t"]
+[ext_resource type="Texture2D" uid="uid://b6ceb13ivwi2g" path="res://Style/Images/Tutorial/wasd.png" id="5_qtv2h"]
 [ext_resource type="Texture2D" uid="uid://cjsdnxjoo8vcc" path="res://Style/Images/Nave/nave-01.png" id="6_rwalr"]
 [ext_resource type="Texture2D" uid="uid://dxk4opltfc4w6" path="res://Style/Images/Enemys/patinho.png" id="7_hgcgw"]
+[ext_resource type="Texture2D" uid="uid://bq36x18qexrxn" path="res://Style/Images/PoweUp/FastUpgrade.png" id="8_inke6"]
+[ext_resource type="Texture2D" uid="uid://bwphxg3m6kxt8" path="res://Style/Images/PoweUp/PowerUpUpgrade.png" id="9_4guol"]
+[ext_resource type="Texture2D" uid="uid://brml5hsc7ty52" path="res://Style/Images/PoweUp/TripleFireUpgrade.png" id="10_tp4un"]
+[ext_resource type="Texture2D" uid="uid://cycm5qrt1obs7" path="res://Style/Images/Heart/heart_full.png" id="11_vggkj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmfts"]
 bg_color = Color(0.545098, 0.545098, 0.545098, 0.533333)
@@ -84,53 +88,83 @@ offset_bottom = 46.214
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_o5dun")
-theme_override_font_sizes/font_size = 20
 text = "Commands:
                      
-                     - Move the Ship
+                          - Move the Ship
 "
 uppercase = true
 
 [node name="1234" type="Sprite2D" parent="Panel/Commands"]
-position = Vector2(26, 61)
+position = Vector2(23, 48)
 texture = ExtResource("4_i4c1t")
 
 [node name="Wasd" type="Sprite2D" parent="Panel/Commands"]
-position = Vector2(87, 61)
+position = Vector2(87, 48)
 texture = ExtResource("5_qtv2h")
 
 [node name="Elements" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 1.489
-anchor_right = 0.5
-anchor_bottom = 1.489
-offset_left = -145.5
+anchor_left = 0.478193
+anchor_top = 1.47333
+anchor_right = 0.478193
+anchor_bottom = 1.93884
+offset_left = -136.5
 offset_top = -811.982
-offset_right = 145.5
-offset_bottom = -649.982
+offset_right = 154.5
+offset_bottom = -778.982
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_o5dun")
-theme_override_font_sizes/font_size = 20
 text = "Elements:
                      
-                     - Player Ship
-					
+                          - Player Ship
+		
 
-                     - Enemy"
+                          - Enemy
+PowerUps:
+                     
+                          - Boost Fire Rate
+                     
+                          - Boost Damage
+                     
+                          - Shot 3 bullets
+                     
+                          - Recover 1 heart"
+clip_text = true
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Nave-01" type="Sprite2D" parent="Panel/Elements"]
-position = Vector2(58, 63)
+position = Vector2(32.6314, 52.4547)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_rwalr")
 
 [node name="Patinho" type="Sprite2D" parent="Panel/Elements"]
-position = Vector2(59, 144)
+position = Vector2(32.6314, 104.909)
 texture = ExtResource("7_hgcgw")
 hframes = 4
 frame = 2
+
+[node name="FastUpgrade" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(32, 187)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_inke6")
+
+[node name="PowerUpUpgrade" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(32, 231.299)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_4guol")
+
+[node name="TripleFireUpgrade" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(32, 275)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_tp4un")
+
+[node name="HeartFull" type="Sprite2D" parent="Panel/Elements"]
+position = Vector2(32, 318.728)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_vggkj")
 
 [node name="ExitButton" type="Button" parent="Panel"]
 layout_mode = 1

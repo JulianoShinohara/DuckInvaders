@@ -106,7 +106,8 @@ func _process(delta):
 	# This workaround fix it
 	if is_first_frame:
 		viewSize = get_viewport().size
-		scrollingContainer.position.y = viewSize.y-950
+
+		scrollingContainer.position.y = 640
 		is_first_frame = false
 	
 	if not done:

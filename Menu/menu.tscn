@@ -1,13 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://cls0tdsf35psh"]
+[gd_scene load_steps=14 format=3 uid="uid://cls0tdsf35psh"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dlse1"]
-[ext_resource type="Texture2D" uid="uid://cb458sdwqfaua" path="res://Style/Images/BackGround/backgroundMenu.png" id="2_g7uku"]
+[ext_resource type="Texture2D" uid="uid://0he7gswnjmei" path="res://Style/Images/BackGround/backgroundMenu.png" id="2_g7uku"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_wsbcb"]
 [ext_resource type="PackedScene" uid="uid://ugpin56quhch" path="res://Tutorial/tutorial_screen.tscn" id="4_bxj4t"]
+[ext_resource type="Texture2D" uid="uid://m5r7kmsfl53b" path="res://Style/Images/Logo/logo_gamepad_80x80.png" id="5_jtawg"]
+[ext_resource type="Script" path="res://Menu/ButtonFullscreen.gd" id="5_kf2nt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tei45"]
 bg_color = Color(0.631373, 0.631373, 0.631373, 0.258824)
 corner_detail = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xv28"]
+atlas = ExtResource("5_jtawg")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yty5d"]
+atlas = ExtResource("5_jtawg")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3u83"]
+atlas = ExtResource("5_jtawg")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuugw"]
+atlas = ExtResource("5_jtawg")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lsre"]
+atlas = ExtResource("5_jtawg")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1g65u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xv28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yty5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3u83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuugw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lsre")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dlse1")
@@ -69,20 +114,20 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Play"
 
-[node name="ButtonScore" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Score"
-
 [node name="ButtonCommands" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Tutorial"
 
+[node name="ButtonCredits" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Creditos"
+
 [node name="ButtonQuit" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit"
+text = "Sair"
 
 [node name="TutorialScreen" parent="CanvasLayer/Control" instance=ExtResource("4_bxj4t")]
 visible = false
@@ -94,13 +139,21 @@ offset_top = 2.0
 offset_right = -2.0
 offset_bottom = 2.0
 
-[node name="mute" type="Button" parent="CanvasLayer"]
-offset_left = 264.0
-offset_top = 1.0
+[node name="ButtonFullscreen" type="Button" parent="CanvasLayer"]
+offset_left = 200.0
 offset_right = 320.0
-offset_bottom = 32.0
-text = "Mutar"
+offset_bottom = 31.0
+text = "Fullscreen [F4]"
+script = ExtResource("5_kf2nt")
+
+[node name="LogoGamepad80x80" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(160, 600)
+sprite_frames = SubResource("SpriteFrames_1g65u")
+autoplay = "default"
+frame_progress = 0.63217
 
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCommands" to="." method="_on_button_commands_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonFullscreen" to="CanvasLayer/ButtonFullscreen" method="_on_pressed"]

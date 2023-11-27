@@ -10,3 +10,7 @@ func _on_button_quit_pressed():
 
 func _on_button_commands_pressed():
 	get_tree().call_group("tutorial", "change_visibility", true)
+
+
+func _on_button_credits_pressed():
+	get_tree().change_scene_to_file("res://Creditos/creditos.tscn")

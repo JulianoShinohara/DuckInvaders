@@ -17,11 +17,12 @@ var _bullet_res: Resource = preload("res://Bullet/bullet.tscn")
 var _input_vector: Vector2
 var _can_fire: bool = true
 var _spread_shot: bool = false
-@export var can_be_hit: bool = true
+@export var can_be_hit: bool = false
 
 func set_rapid_fire():
 	self.fire_delay = 0.04
 	self.bullet_speed = 450
+
 	if(_rapid_fire_timer.time_left > 0):
 		_rapid_fire_timer.set_time_left(_rapid_fire_timer.time_left + 5)
 	else:
@@ -41,13 +42,11 @@ func set_damage():
 		
 func set_spread():
 	self._spread_shot = true
-	self.fire_delay = 0.16
 	if(_spread_shot_timer.time_left > 0):
 		_spread_shot_timer.set_time_left(_spread_shot_timer.time_left + 5)
 	else:
 		_spread_shot_timer = get_tree().create_timer(5)
 		await _spread_shot_timer.timeout
-		self.fire_delay = 0.12
 		self._spread_shot = false
 
 
