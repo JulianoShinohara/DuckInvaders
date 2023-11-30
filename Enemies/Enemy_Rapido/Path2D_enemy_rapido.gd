@@ -8,8 +8,9 @@ var timer = 0
 @export var quantityEnemiesOnScreen = 5
 @export var health = 7
 @export var fire_delay = 0.4
-@export var bullet_speed = 200
+@export var bullet_speed = 120
 @export var speed = 100
+
 signal all_enemies_rapido_killed
 var _enemiesInLife = 0
 var _enemiesEliminated = 0
@@ -21,7 +22,7 @@ func set_player(player: Player):
 func _process(delta):
 	timer = timer + delta
 	
-	if (timer > spawnTime and _enemiesInLife <= quantityEnemiesOnScreen and quantityEnemy > 0):
+	if (timer > spawnTime and _enemiesInLife < quantityEnemiesOnScreen and quantityEnemy > 0):
 		
 		var newEnemy = enemy_path.instantiate()
 		newEnemy.progress = randf_range(0, 300)

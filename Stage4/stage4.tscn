@@ -27,9 +27,9 @@ sources/0 = SubResource("TileSetScenesCollectionSource_6muqy")
 
 [sub_resource type="Curve2D" id="Curve2D_aaem7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 26, 60, 0, 0, 0, 0, 244, 57, 0, 0, 0, 0, 291, 87, 0, 0, 0, 0, 247, 115, 0, 0, 0, 0, 80, 115, 0, 0, 0, 0, 34, 151, 0, 0, 0, 0, 76, 198, 0, 0, 0, 0, 180, 154, 0, 0, 0, 0, 225, 197, 0, 0, 0, 0, 256, 195, 0, 0, 0, 0, 286, 237, 0, 0, 0, 0, 221, 278, 0, 0, 0, 0, 161, 234, 0, 0, 0, 0, 75, 277, 0, 0, 0, 0, 34, 328, 0, 0, 0, 0, 80, 368, 0, 0, 0, 0, 162, 310, 0, 0, 0, 0, 226, 360, 0, 0, 0, 0, 284, 320, 0, 0, 0, 0, 297, 366, 0, 0, 0, 0, 266, 406, 0, 0, 0, 0, 40, 405)
+"points": PackedVector2Array(0, 0, 0, 0, 26, 60, -45.8295, 68.9667, 45.8295, -68.9667, 164, 97, 0, 0.889893, 0, -0.889893, 296, 83, 74.3061, -42.2699, -74.3061, 42.2699, 243, 145, 0, 0, 0, 0, 146, 184, 21.8024, -28.0316, -21.8024, 28.0316, 52, 164, 0, 0, 0, 0, 36, 216, -16.463, 16.0181, 16.463, -16.0181, 85, 258, -11.5686, 0, 11.5686, 0, 160, 242, -22.6923, -0.444947, 22.6923, 0.444947, 234, 195, 0, 0, 0, 0, 291, 244, 48.9441, 17.7979, -48.9441, -17.7979, 277, 300, 53.8385, 78.7556, -53.8385, -78.7556, 205, 319, 0, 0, 0, 0, 104, 347, 27.1417, -35.1508, -27.1417, 35.1508, 47, 313, 0, 0, 0, 0, 30, 340)
 }
-point_count = 22
+point_count = 16
 
 [node name="Game2" type="Node2D" groups=["game"]]
 script = ExtResource("1_aeio1")
@@ -91,14 +91,16 @@ health = 5
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("12_l3ww7")
 quantityEnemy = 9
-quantityEnemiesOnScreen = 1
-health = 4
+quantityEnemiesOnScreen = 2
+health = 5
 bullet_speed = 160
 
 [node name="PathBoss2D" parent="." instance=ExtResource("13_s8fjb")]
 position = Vector2(16, 0)
 script = ExtResource("14_jg53d")
+enemiesEliminated = 23
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("14_eajld")
+health = 3

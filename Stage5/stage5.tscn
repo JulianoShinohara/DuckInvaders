@@ -83,25 +83,33 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 [node name="PathAtirador2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("11_w3uk0")
-spawnTime = 4
-quantityEnemy = 1
+quantityEnemy = 15
 quantityEnemiesOnScreen = 3
 health = 5
+bullet_speed = 120
+speed = 60
 
 [node name="PathRapido2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("12_qhnne")
-quantityEnemy = 1
+spawnTime = 5
+quantityEnemy = 9
 quantityEnemiesOnScreen = 1
-health = 4
-bullet_speed = 160
+health = 3
+bullet_speed = 110
+speed = 80
 
 [node name="PathBoss2D" parent="." instance=ExtResource("13_j8nvs")]
 position = Vector2(16, 0)
 script = ExtResource("14_m25kw")
 enemy_path = ExtResource("15_jrvtj")
+enemiesEliminated = 25
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("14_p2j77")
-quantityEnemy = 1
+spawnTime = 9
+quantityEnemy = 4
+health = 4
+fire_delay = 0.8
+bullet_speed = 140

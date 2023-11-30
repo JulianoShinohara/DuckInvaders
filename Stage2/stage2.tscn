@@ -89,7 +89,7 @@ health = 5
 [node name="PathRapido2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("12_oj6y3")
-quantityEnemy = 9
+quantityEnemy = 7
 quantityEnemiesOnScreen = 1
 health = 4
 bullet_speed = 160
@@ -97,3 +97,4 @@ bullet_speed = 160
 [node name="PathBoss2D" parent="." instance=ExtResource("12_ndc55")]
 position = Vector2(16, 0)
 script = ExtResource("14_uotdl")
+enemiesEliminated = 19

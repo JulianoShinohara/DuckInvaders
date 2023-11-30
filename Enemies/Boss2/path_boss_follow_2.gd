@@ -1,8 +1,8 @@
 extends PathFollow2D
 
 var health = 25
-var fire_delay = 0.4
-var bullet_speed = 150
+var fire_delay = 0.5
+var bullet_speed = 100
 var speed = 60
 #@onready var _enemy: Enemy_Atirador = $Enemy_Atirador
 

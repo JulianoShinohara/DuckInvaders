@@ -129,6 +129,12 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Sair"
 
+[node name="LogoGamepad80x80" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+position = Vector2(160, 600)
+sprite_frames = SubResource("SpriteFrames_1g65u")
+autoplay = "default"
+frame_progress = 0.63217
+
 [node name="TutorialScreen" parent="CanvasLayer/Control" instance=ExtResource("4_bxj4t")]
 visible = false
 light_mask = 4
@@ -145,12 +151,6 @@ offset_right = 320.0
 offset_bottom = 31.0
 text = "Fullscreen [F4]"
 script = ExtResource("5_kf2nt")
-
-[node name="LogoGamepad80x80" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(160, 600)
-sprite_frames = SubResource("SpriteFrames_1g65u")
-autoplay = "default"
-frame_progress = 0.63217
 
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCommands" to="." method="_on_button_commands_pressed"]

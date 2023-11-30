@@ -26,10 +26,11 @@ scenes/3/scene = ExtResource("10_sqqsf")
 sources/0 = SubResource("TileSetScenesCollectionSource_6muqy")
 
 [sub_resource type="Curve2D" id="Curve2D_aaem7"]
+bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 26, 60, 0, 0, 0, 0, 244, 57, 0, 0, 0, 0, 291, 87, 0, 0, 0, 0, 247, 115, 0, 0, 0, 0, 80, 115, 0, 0, 0, 0, 34, 151, 0, 0, 0, 0, 76, 198, 0, 0, 0, 0, 180, 154, 0, 0, 0, 0, 225, 197, 0, 0, 0, 0, 256, 195, 0, 0, 0, 0, 286, 237, 0, 0, 0, 0, 221, 278, 0, 0, 0, 0, 161, 234, 0, 0, 0, 0, 75, 277, 0, 0, 0, 0, 34, 328, 0, 0, 0, 0, 80, 368, 0, 0, 0, 0, 162, 310, 0, 0, 0, 0, 226, 360, 0, 0, 0, 0, 284, 320, 0, 0, 0, 0, 297, 366, 0, 0, 0, 0, 266, 406, 0, 0, 0, 0, 40, 405)
+"points": PackedVector2Array(0, 0, 0, 0, 26, 60, 0, 0, 0, 0, 244, 57, -2.22473, -36.0407, 2.22473, 36.0407, 291, 87, 0, 0, 0, 0, 247, 115, 0, 0, 0, 0, 80, 115, 10.2338, -42.7149, -10.2338, 42.7149, 34, 151, 0, 0, 0, 0, 76, 198, 65.8521, -87.6545, -65.8521, 87.6545, 225, 197, 0, 0, 0, 0, 286, 237, 0, 0, 0, 0, 221, 278, 6.6742, -66.742, -6.6742, 66.742, 75, 277, 0, 0, 0, 0, 34, 328, -69.4117, 60.9577, 69.4117, -60.9577, 80, 368, -43.1598, -28.0316, 43.1598, 28.0316, 284, 320, 0, 0, 0, 0, 266, 406, 0, 0, 0, 0, 40, 405)
 }
-point_count = 22
+point_count = 16
 
 [node name="Game2" type="Node2D" groups=["game"]]
 script = ExtResource("1_hb653")
@@ -83,9 +84,10 @@ layer_0/tile_data = PackedInt32Array(1769472, 0, 196608, 1769473, 0, 196608, 176
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("11_l7ix7")
 spawnTime = 4
-quantityEnemy = 12
+quantityEnemy = 15
 quantityEnemiesOnScreen = 3
 health = 5
+speed = 40
 
 [node name="PathRapido2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
@@ -94,11 +96,17 @@ quantityEnemy = 9
 quantityEnemiesOnScreen = 1
 health = 4
 bullet_speed = 160
+speed = 40
 
 [node name="PathBoss2D" parent="." instance=ExtResource("13_or6aq")]
 position = Vector2(16, 0)
 script = ExtResource("14_1nlra")
+enemiesEliminated = 19
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("14_yj4gf")
+spawnTime = 10
+quantityEnemy = 3
+health = 3
+speed = 40

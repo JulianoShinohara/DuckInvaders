@@ -4,12 +4,11 @@ class_name Boss_fase_2
 
 # Enemy
 @export var health: float = 25
-@export var speed: float = 4.0
 var _player: Player
 @onready var _last_postion: Vector2 = self.global_position
 
-@export var bullet_speed: float = 150
-@export var fire_delay: float = 0.5
+@export var bullet_speed: float = 100
+@export var fire_delay: float = 0.9
 @export var fire_error: float = 0.08
 @onready var bullet_points = [$BulletPoint1,$BulletPoint2,$BulletPoint3]
 signal boss_killed

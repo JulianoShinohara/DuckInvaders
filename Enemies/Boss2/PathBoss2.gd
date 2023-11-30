@@ -6,7 +6,7 @@ extends Path2D
 signal all_boss_killed
 
 var _player: Player
-var enemiesEliminated = 1
+@export var enemiesEliminated = 25
 
 func set_player(player: Player):
 	_player = player

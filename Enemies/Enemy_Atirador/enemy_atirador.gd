@@ -8,7 +8,7 @@ class_name Enemy_Atirador
 var _player: Player
 @onready var _last_postion: Vector2 = self.global_position
 
-@export var bullet_speed: float = 150
+@export var bullet_speed: float = 100
 @export var fire_delay: float = 1
 @export var fire_error: float = 0.08
 
