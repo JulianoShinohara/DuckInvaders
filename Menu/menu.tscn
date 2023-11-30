@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://cls0tdsf35psh"]
+[gd_scene load_steps=15 format=3 uid="uid://cls0tdsf35psh"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dlse1"]
-[ext_resource type="Texture2D" uid="uid://0he7gswnjmei" path="res://Style/Images/BackGround/backgroundMenu.png" id="2_g7uku"]
+[ext_resource type="Texture2D" uid="uid://ct00iwrfce0nu" path="res://Style/Images/BackGround/backgroundMenu.png" id="2_g7uku"]
 [ext_resource type="FontFile" uid="uid://ci1jgm6uulhmm" path="res://Style/Fonts/GlossySheenShineDEMO.ttf" id="2_wsbcb"]
 [ext_resource type="PackedScene" uid="uid://ugpin56quhch" path="res://Tutorial/tutorial_screen.tscn" id="4_bxj4t"]
-[ext_resource type="Texture2D" uid="uid://m5r7kmsfl53b" path="res://Style/Images/Logo/logo_gamepad_80x80.png" id="5_jtawg"]
+[ext_resource type="Texture2D" uid="uid://d3vgvgbb6tlpt" path="res://Style/Images/Logo/logo_gamepad_80x80.png" id="5_jtawg"]
 [ext_resource type="Script" path="res://Menu/ButtonFullscreen.gd" id="5_kf2nt"]
+[ext_resource type="AudioStream" uid="uid://bl047a3fv2eu3" path="res://Style/Sounds/backgroundMenu.mp3" id="7_2whad"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tei45"]
 bg_color = Color(0.631373, 0.631373, 0.631373, 0.258824)
@@ -151,6 +152,11 @@ offset_right = 320.0
 offset_bottom = 31.0
 text = "Fullscreen [F4]"
 script = ExtResource("5_kf2nt")
+
+[node name="AudioBackGround" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("7_2whad")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCommands" to="." method="_on_button_commands_pressed"]

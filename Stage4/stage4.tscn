@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dnexq1qev5lif"]
+[gd_scene load_steps=24 format=3 uid="uid://dnexq1qev5lif"]
 
 [ext_resource type="Script" path="res://Stage4/stage4.gd" id="1_aeio1"]
 [ext_resource type="PackedScene" uid="uid://dlkq64kf8131e" path="res://HeartBar/HeartBar.tscn" id="2_tqakm"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_s62t5"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_17otj"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_4cued"]
-[ext_resource type="Texture2D" uid="uid://djq8fiqf1b3y6" path="res://Style/Images/BackGround/Terra_fase_4.png" id="7_h6cwg"]
+[ext_resource type="Texture2D" uid="uid://ch0vl86bnbhmu" path="res://Style/Images/BackGround/Terra_fase_4.png" id="7_h6cwg"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_4tgkw"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_hw6lh"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_sbwrp"]
@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://b3mrvwxi6oiyy" path="res://Enemies/Boss/path_boss_2d.tscn" id="13_s8fjb"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Multiplo/Path2D_enemy_multiplo.gd" id="14_eajld"]
 [ext_resource type="Script" path="res://Enemies/Boss/PathBoss2D.gd" id="14_jg53d"]
+[ext_resource type="AudioStream" uid="uid://dxd7svfyxhgo0" path="res://Style/Sounds/DuckDeath.mp3" id="16_nyjk8"]
+[ext_resource type="AudioStream" uid="uid://0o3qooi1d5gx" path="res://Style/Sounds/win.mp3" id="17_eyvmq"]
+[ext_resource type="AudioStream" uid="uid://bgocq6sieuwvs" path="res://Style/Sounds/game-over.mp3" id="18_riy5g"]
+[ext_resource type="AudioStream" uid="uid://d383ktwf1mjpa" path="res://Style/Sounds/game.mp3" id="19_j35wt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 
@@ -98,9 +102,25 @@ bullet_speed = 160
 [node name="PathBoss2D" parent="." instance=ExtResource("13_s8fjb")]
 position = Vector2(16, 0)
 script = ExtResource("14_jg53d")
-enemiesEliminated = 23
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")
 script = ExtResource("14_eajld")
 health = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("16_nyjk8")
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_eyvmq")
+volume_db = -20.0
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_riy5g")
+volume_db = -15.0
+
+[node name="inGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_j35wt")
+volume_db = -40.0
+autoplay = true

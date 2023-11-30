@@ -105,6 +105,7 @@ func _hit(bullet: Bullet) -> void:
 				game_controller.create_explosion("normal", get_global_position())
 				emit_signal("player_health_depleted")
 				emit_signal("killed")
+				$DeathSoundPlayer.play()
 			await get_tree().create_timer(invunerability_time).timeout
 			_animated_sprite.play("default")
 			can_be_hit = true

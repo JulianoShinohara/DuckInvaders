@@ -19,8 +19,12 @@ func _ready():
 	var _atiradores = $PathAtirador2D
 	var _boss = $PathBoss2D
 	var _rapidos = $PathRapido2D
+	var audioDeathEnemy = $AudioStreamPlayer
+	var _inGame = $inGame
 	
-	game_controller.init(_player)
+	_inGame.play()
+	
+	game_controller.init(_player, audioDeathEnemy)
 	_player.killed.connect(_on_player_killed)
 	_atiradores.all_enemies_killed.connect(_enemies_killed)
 	_rapidos.all_enemies_rapido_killed.connect(_enemies_rapido_killed)
@@ -39,17 +43,21 @@ func _enemies_rapido_killed():
 	victory()
 
 func victory():
+	var _victoryGame = $Victory
 	if (_all_enemies_killed and _all_boss_killed and _all_enemies_rapido_killed):
 		get_tree().call_group('bullet', 'queue_free')
 		await get_tree().create_timer(0.1).timeout
 		get_tree().paused = true
 		win_game.set_score(game_controller._score)
 		win_game.visible = true
+		_victoryGame.play()
 
 func _on_player_killed():
+	var _loseGame = $GameOver
 	get_tree().call_group('bullet', 'queue_free')
 	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = true
 	game_over.set_score(game_controller._score)
 	game_over.visible = true
+	_loseGame.play()
 

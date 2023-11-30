@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqquo72v4j5cx"]
+
+[ext_resource type="AudioStream" uid="uid://dxd7svfyxhgo0" path="res://Style/Sounds/DuckDeath.mp3" id="1_sie4s"]
+
+[node name="SoundDeath" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_sie4s")
+autoplay = true

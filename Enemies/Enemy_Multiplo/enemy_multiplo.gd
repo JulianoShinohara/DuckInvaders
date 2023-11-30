@@ -51,7 +51,7 @@ func _fire_bullet():
 	
 	_can_fire = false
 	await get_tree().create_timer(fire_delay).timeout
-	_can_fire = true	
+	_can_fire = true
 
 func _hit(bullet: Bullet) -> void:
 	if not is_in_group(bullet.not_target):

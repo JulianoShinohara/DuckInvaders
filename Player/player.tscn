@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt724p02hihsy"]
+[gd_scene load_steps=9 format=3 uid="uid://dt724p02hihsy"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3w80o"]
 [ext_resource type="Texture2D" uid="uid://cjsdnxjoo8vcc" path="res://Style/Images/Nave/nave-01.png" id="2_5xbyv"]
 [ext_resource type="Texture2D" uid="uid://cpeurhlgvvubh" path="res://Style/Images/Nave/nave-02.png" id="3_n5vjx"]
-[ext_resource type="Texture2D" uid="uid://tdk0r3hvdutm" path="res://Style/Images/Nave/nave-03.png" id="4_bx5b4"]
-[ext_resource type="Texture2D" uid="uid://c04o07uvjdom5" path="res://Style/Images/Nave/nave-04.png" id="5_3mtu7"]
-[ext_resource type="Texture2D" uid="uid://crswvb6q8ku7m" path="res://Style/Images/Nave/nave-05.png" id="6_n7rn8"]
+[ext_resource type="Texture2D" uid="uid://ch2o57rdtb55x" path="res://Style/Images/Nave/nave-03.png" id="4_bx5b4"]
+[ext_resource type="Texture2D" uid="uid://cpg8r0rlejdx1" path="res://Style/Images/Nave/nave-04.png" id="5_3mtu7"]
+[ext_resource type="Texture2D" uid="uid://dv8sxyfgaffov" path="res://Style/Images/Nave/nave-05.png" id="6_n7rn8"]
+[ext_resource type="AudioStream" uid="uid://bfg5gwpjsysjx" path="res://Style/Sounds/NaveExplosion.mp3" id="7_gyt8d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkd1"]
 animations = [{
@@ -65,5 +66,10 @@ collision_mask = 9
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
 scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(7, -27, 10, -17, 11, -10, 29, 11, 29, 17, 27, 20, 13, 20, 13, 24, 4, 24, 4, 20, -4, 20, -4, 24, -13, 24, -13, 20, -27, 20, -29, 16, -29, 10, -11, -10, -10, -17, -7, -27, -2, -31, 2, -31)
+
+[node name="DeathSoundPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("7_gyt8d")
+volume_db = -25.0
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

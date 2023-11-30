@@ -2,8 +2,11 @@ class_name GameController
 extends Node
 
 var _player: Player
+var _audioDeathEnemy: AudioStreamPlayer
 var _score: int = 0
 var _stage: int = 1
+
+var _SoundEffectEnemy = preload("res://Style/Sounds/DuckDeath.mp3")
 
 var explosions = {
 	"normal": preload("res://Explosion/explosion.tscn"),
@@ -23,7 +26,9 @@ var powerups = {
 
 # PUBLIC METHODS
 ############################################
-func init(player) -> void:
+
+func init(player, audioDeathEnemy) -> void:
+	_audioDeathEnemy = audioDeathEnemy
 	_player = player
 	get_tree().call_group("path" ,"set_player", _player)
 
@@ -34,8 +39,7 @@ func create_explosion(type: String, pos: Vector2) -> void:
 	get_tree().root.add_child(explosion)	
 	
 func enemy_eliminated(enemy):
-	# Ao matar um inimigo fazer a lógica para spawnar um powerup na posição do inimigo morto e fazer com ele dessa até o fim do mapa
-	#var powerup = powerups["ra"]
+	_audioDeathEnemy.play()
 	var keyPowerUp
 	if(randi_range(1,100) > 90):
 		if(_player.health < 3):
