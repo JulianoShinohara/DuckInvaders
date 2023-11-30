@@ -44,16 +44,14 @@ func _enemies_multiplo_killed():
 	
 func victory():
 	if (_all_enemies_killed and _all_boss_killed and _all_enemies_rapido_killed && _all_enemies_multiplo_killed):
-		for bullets in get_tree().get_nodes_in_group("bullet"):
-			bullets.queue_free()
+		get_tree().call_group('bullet', 'queue_free')
 		await get_tree().create_timer(0.1).timeout
 		get_tree().paused = true
 		win_game.set_score(game_controller._score)
 		win_game.visible = true
 
 func _on_player_killed():
-	for bullets in get_tree().get_nodes_in_group("bullet"):
-		bullets.queue_free()
+	get_tree().call_group('bullet', 'queue_free')
 	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = true
 	game_over.set_score(game_controller._score)
