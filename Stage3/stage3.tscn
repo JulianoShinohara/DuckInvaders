@@ -105,6 +105,7 @@ speed = 40
 [node name="PathBoss2D" parent="." instance=ExtResource("13_or6aq")]
 position = Vector2(16, 0)
 script = ExtResource("14_1nlra")
+enemiesEliminated = 19
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")

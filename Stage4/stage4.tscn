@@ -102,6 +102,7 @@ bullet_speed = 160
 [node name="PathBoss2D" parent="." instance=ExtResource("13_s8fjb")]
 position = Vector2(16, 0)
 script = ExtResource("14_jg53d")
+enemiesEliminated = 19
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")

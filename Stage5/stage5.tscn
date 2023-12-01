@@ -107,6 +107,7 @@ speed = 80
 position = Vector2(16, 0)
 script = ExtResource("14_m25kw")
 enemy_path = ExtResource("15_jrvtj")
+enemiesEliminated = 25
 
 [node name="PathMultiplo2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_aaem7")

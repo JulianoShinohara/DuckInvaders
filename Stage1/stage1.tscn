@@ -88,6 +88,7 @@ health = 5
 
 [node name="PathBoss2D" parent="." instance=ExtResource("12_q2nt3")]
 script = ExtResource("13_yfayu")
+enemiesEliminated = 19
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
