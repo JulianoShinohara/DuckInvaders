@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_3o5ni"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_oluxp"]
 [ext_resource type="Script" path="res://Menu/ButtonFullscreen.gd" id="7_74ikm"]
-[ext_resource type="Texture2D" uid="uid://dcdisjecri8sc" path="res://Style/Images/BackGround/Marte_fase3.png" id="7_wfd30"]
+[ext_resource type="Texture2D" uid="uid://dvwn0g6mttu6f" path="res://Style/Images/BackGround/Marte_fase3.png" id="7_wfd30"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_mcw52"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_js4b3"]
 [ext_resource type="PackedScene" uid="uid://cgfuo5bhdlnfh" path="res://Wall/player_wall.tscn" id="10_sqqsf"]
@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://b3mrvwxi6oiyy" path="res://Enemies/Boss/path_boss_2d.tscn" id="13_or6aq"]
 [ext_resource type="Script" path="res://Enemies/Boss/PathBoss2D.gd" id="14_1nlra"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Multiplo/Path2D_enemy_multiplo.gd" id="14_yj4gf"]
-[ext_resource type="AudioStream" uid="uid://bx21qhl3txeqr" path="res://Style/Sounds/DuckDeath.mp3" id="16_bfky3"]
-[ext_resource type="AudioStream" uid="uid://clf8sfx7xavdy" path="res://Style/Sounds/win.mp3" id="17_dya75"]
-[ext_resource type="AudioStream" uid="uid://cx8tf8wthywh8" path="res://Style/Sounds/game-over.mp3" id="18_g67wb"]
-[ext_resource type="AudioStream" uid="uid://c4k1ta8dd7dpg" path="res://Style/Sounds/game.mp3" id="19_qxics"]
+[ext_resource type="AudioStream" uid="uid://dxd7svfyxhgo0" path="res://Style/Sounds/DuckDeath.mp3" id="16_bfky3"]
+[ext_resource type="AudioStream" uid="uid://0o3qooi1d5gx" path="res://Style/Sounds/win.mp3" id="17_dya75"]
+[ext_resource type="AudioStream" uid="uid://bgocq6sieuwvs" path="res://Style/Sounds/game-over.mp3" id="18_g67wb"]
+[ext_resource type="AudioStream" uid="uid://d383ktwf1mjpa" path="res://Style/Sounds/game.mp3" id="19_qxics"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 

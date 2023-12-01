@@ -46,10 +46,45 @@ func _ready():
 	if musicPlaylist.size() > 0 and musicPlaylist[playlistIndex] != null:
 		playlist_track(playlistIndex)
 		
-	# Well, open the credits file and read it
-	file = FileAccess.open(creditsFile, FileAccess.READ)
-	credits = file.get_as_text()
-	file.close()
+
+	credits = "{DUCK INVADERS}
+
+
+
+[Producer]
+Henrique Moura Bini (Bit)
+Juliano Kendyi Shinohara (Shino)
+
+[Screenplay]
+Henrique Moura Bini (Bit)
+Juliano Kendyi Shinohara (Shino)
+
+[Programmers]
+Henrique Moura Bini (Bit)
+Juliano Kendyi Shinohara (Shino)
+
+[Graphic designers]
+Henrique Moura Bini (Bit)
+Juliano Kendyi Shinohara (Shino)
+
+[MUSICS]
+[Synthwave Vintage Future]
+by REDproductions
+[8-bit Arcade Mode]
+by moodmode
+[Game Over Arcade]
+by Pixabay
+[Vitória]
+by tibaSFX
+
+{FONTS}
+[Arial]
+by Robin Nicholas and Patricia Saunders
+[GlossySheen]
+by Ali Hamidi
+
+[License]
+GNU General Public License v3.0"
 	
 	# Parse the credits file
 	var scrollingText = null

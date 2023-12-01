@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://UI/MobileInput/Joystick.tscn" id="4_tlj55"]
 [ext_resource type="PackedScene" uid="uid://bc41q2kltisn2" path="res://WinAndLose/game_over_screen.tscn" id="5_m5vtm"]
 [ext_resource type="PackedScene" uid="uid://dgkbufrmqv0hd" path="res://WinAndLose/win_screen.tscn" id="6_2u4j3"]
-[ext_resource type="Texture2D" uid="uid://dmybapmu7i02c" path="res://Style/Images/BackGround/Venus_fase_5.png" id="7_el14m"]
+[ext_resource type="Texture2D" uid="uid://keemlwodbihx" path="res://Style/Images/BackGround/Venus_fase_5.png" id="7_el14m"]
 [ext_resource type="Script" path="res://Menu/ButtonFullscreen.gd" id="7_f1nvi"]
 [ext_resource type="PackedScene" uid="uid://dt724p02hihsy" path="res://Player/player.tscn" id="8_xb66v"]
 [ext_resource type="PackedScene" uid="uid://ij1a08e8l6oo" path="res://Wall/bullet_wall.tscn" id="9_450it"]
@@ -17,10 +17,10 @@
 [ext_resource type="Script" path="res://Enemies/Boss2/PathBoss2.gd" id="14_m25kw"]
 [ext_resource type="Script" path="res://Enemies/Enemy_Multiplo/Path2D_enemy_multiplo.gd" id="14_p2j77"]
 [ext_resource type="PackedScene" uid="uid://x0rebtb66ekn" path="res://Enemies/Boss2/path_boss_follow_2.tscn" id="15_jrvtj"]
-[ext_resource type="AudioStream" uid="uid://bx21qhl3txeqr" path="res://Style/Sounds/DuckDeath.mp3" id="17_48hh5"]
-[ext_resource type="AudioStream" uid="uid://clf8sfx7xavdy" path="res://Style/Sounds/win.mp3" id="18_x01f3"]
-[ext_resource type="AudioStream" uid="uid://cx8tf8wthywh8" path="res://Style/Sounds/game-over.mp3" id="19_h8ok2"]
-[ext_resource type="AudioStream" uid="uid://c4k1ta8dd7dpg" path="res://Style/Sounds/game.mp3" id="20_pja2m"]
+[ext_resource type="AudioStream" uid="uid://dxd7svfyxhgo0" path="res://Style/Sounds/DuckDeath.mp3" id="17_48hh5"]
+[ext_resource type="AudioStream" uid="uid://0o3qooi1d5gx" path="res://Style/Sounds/win.mp3" id="18_x01f3"]
+[ext_resource type="AudioStream" uid="uid://bgocq6sieuwvs" path="res://Style/Sounds/game-over.mp3" id="19_h8ok2"]
+[ext_resource type="AudioStream" uid="uid://d383ktwf1mjpa" path="res://Style/Sounds/game.mp3" id="20_pja2m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1up5w"]
 
