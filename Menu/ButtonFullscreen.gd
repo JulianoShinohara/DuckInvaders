@@ -13,10 +13,12 @@ func _toggle_fullscreen() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	if Input.is_action_just_pressed("fullscreen"):
 		_toggle_fullscreen();
 		
 func _ready() -> void:
+	self.focus_mode = Control.FOCUS_NONE
 	if OS.has_feature("mobile"):
 		set_visible(false)
 		
